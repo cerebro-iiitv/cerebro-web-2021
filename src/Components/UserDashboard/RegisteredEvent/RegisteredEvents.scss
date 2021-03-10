@@ -1,0 +1,97 @@
+@import "../../../fonts.css";
+
+$fix-1773: 0.77;
+$fix-1350: 0.57;
+$fix-1001: 0.37;
+
+.registered-event{
+    display: flex;  
+    justify-content: flex-start;
+    column-gap: 125px;
+    margin: 0;
+    margin-left: 22px;
+    margin-bottom: 52px;
+    width: max-content;
+}
+
+.registered-event_title{
+    font-family: Gilroy-Light;
+    font-size: 40px;
+}
+
+.registered-event_date{
+    font-family: Gilroy-Light;
+    font-size: 40px; 
+}
+
+.registered-event_delete{
+    height: 35px;
+    width: 35px;
+}
+
+@media screen and (max-width:1773px){
+    .registered-event{
+        column-gap: calc(#{125px*$fix-1773});
+        margin: 0;
+        margin-left: calc(#{22px*$fix-1773});
+        margin-bottom: calc(#{52px*$fix-1773});
+    }
+    
+    .registered-event_title{
+        font-size: calc(#{40px*$fix-1773});
+    }
+    
+    .registered-event_date{
+        font-size: calc(#{40px*$fix-1773});
+    }
+    
+    .registered-event_delete{
+        height: calc(#{35px*$fix-1773});
+        width: calc(#{35px*$fix-1773});
+    } 
+}
+
+@media screen and (max-width:1350px){
+    .registered-event{
+        column-gap: calc(#{125px*$fix-1350});
+        margin: 0;
+        margin-left: calc(#{22px*$fix-1350});
+        margin-bottom: calc(#{52px*$fix-1350});
+    }
+    
+    .registered-event_title{
+        font-size: calc(#{40px*$fix-1350});
+    }
+    
+    .registered-event_date{
+        font-size: calc(#{40px*$fix-1350});
+    }
+    
+    .registered-event_delete{
+        height: calc(#{35px*$fix-1350});
+        width: calc(#{35px*$fix-1350});
+    } 
+}
+
+@media screen and (max-width:1001px){
+    .registered-event{
+        column-gap: calc(#{125px*$fix-1001});
+        margin: 0;
+        margin-left: calc(#{22px*$fix-1001});
+        margin-bottom: calc(#{52px*$fix-1001});
+    }
+    
+    .registered-event_title{
+        font-size: calc(#{40px*$fix-1001});
+    }
+    
+    .registered-event_date{
+        font-size: calc(#{40px*$fix-1001});
+    }
+    
+    .registered-event_delete{
+        height: calc(#{35px*$fix-1001});
+        width: calc(#{35px*$fix-1001});
+    } 
+}
+
