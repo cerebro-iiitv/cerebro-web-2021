@@ -7,6 +7,7 @@ import "./scss/_base.scss";
 import "./fonts.css";
 import Team from "./Components/Team/Team";
 import Events from "./Components/Events/Events";
+import UserDashboard from "./Components/UserDashboard/UserDashboard";
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -66,6 +67,9 @@ class App extends React.Component {
           path="/timeline"
           render={props => <Timeline events={this.state.events} />}
         />
+        <Route
+          path="/user-dashboard"
+          component={UserDashboard}/>
       </Switch>
     );
   }
