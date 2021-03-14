@@ -6,6 +6,7 @@ import "font-awesome/css/font-awesome.min.css";
 import Modal from "react-responsive-modal";
 import { GoogleLogin } from "react-google-login";
 import Cookies from 'js-cookie';
+import Auth from "../Registration/Auth";
 
 class Header extends Component {
   constructor(props) {
@@ -63,6 +64,7 @@ class Header extends Component {
             <a className="navbar__links__li"
               href="https://yashshah2820.pythonanywhere.com/media/pdfs/cerebro-brochure.pdf"
             > Brochure </a>
+            <li><Auth/></li>
           </ul>
         {/* 
           <GoogleLogin

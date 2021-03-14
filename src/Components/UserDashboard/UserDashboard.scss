@@ -5,49 +5,70 @@ $fix-1350: 0.57;
 $fix-1001: 0.37;
 .user{
     display: flex;
-    width: max-content;
+    width: 100%;
     margin: auto;
+    display: flex;
+    box-sizing: border-box;
+    padding: 30px 0;
+    height: 650px;
+    margin-bottom: 100px;
 }
 
 .user-events{
-    margin-top: 105px;
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    flex-flow: column;
+    align-items: center;
 }
 
 .user-events__header{
     color: #29abe2;
     font-family: Gilroy-ExtraBold;
-    font-size: 49px;
-    // font-weight: 800;
-    margin-left: 269px;
+    font-size: 36px;
+    letter-spacing: 1px;
+    font-weight: 800;
+    // margin-left: 269px;
 }
 
 .user-events__registered{
     margin-top: 76px;
 }
 
+.user-hr-container{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .user-hr{
     background-color: #29abe2;
     width: 0;
     height: 202px;
-    // margin: 53.5px 0 4.5px;
-    margin-left: 59.5px;
-    margin-top: 219px;
-    border: solid 5px #29abe2;
+    
+    border: solid 3px #29abe2;
     border-radius: 20px;
 }
 
 .user-details{
-    margin-top: 219.1px;
-    margin-bottom: 350px;
-    margin-left: 183px;
+    display: flex;
+    flex-flow: column;
+    width: 40%;
+    justify-content: center;
+    align-items: center;
 }
 
 .user-details__name{
     font-family: Gilroy-Light;
     color: #29abe2;
-    font-size: 70px;
+    font-size: 51px;
     border-bottom: solid 1px #268db9;
-    padding: 11px 34px;       
+    width: 280px;
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    justify-content: center;       
 }
 
 .user-details__number{
@@ -71,149 +92,7 @@ $fix-1001: 0.37;
     transform: translateY(-12px);
 }
 
-@media screen and (max-width:1773px){
-    .user-events{
-        margin-top: calc(#{105px*$fix-1773});
-    }
-    
-    .user-events__header{
-        font-size: calc(#{49px*$fix-1773});
-        margin-left: calc(#{269px*$fix-1773});
-    }
-    
-    .user-events__registered{
-        margin-top: calc(#{76px*$fix-1773});
-    }
-    
-    .user-hr{
-        height: calc(#{202px*$fix-1773});
-        margin-left: calc(#{59.5px*$fix-1773});
-        margin-top: calc(#{219px*$fix-1773});
-        border: solid calc(#{5px*$fix-1773}) #29abe2;
-    }
-    
-    .user-details{
-        margin-top: calc(#{219.1px*$fix-1773});
-        margin-bottom: calc(#{350px*$fix-1773});
-        margin-left: calc(#{183px*$fix-1773});
-    }
-    
-    .user-details__name{
-        font-size: calc(#{70px*$fix-1773});
-        padding: calc(#{11px*$fix-1773}) calc(#{34px*$fix-1773}); 
-    }
-    
-    .user-details__number{
-        font-size: calc(#{35px*$fix-1773});
-        border-radius: calc(#{15px*$fix-1773});
-        padding: calc(#{6px*$fix-1773}) calc(#{26px*$fix-1773});
-        margin-top: calc(#{29.5px*$fix-1773});
-        margin-left: calc(#{96.5px*$fix-1773});
-    }
-    
-    .user-details__circle{
-        width: calc(#{26px*$fix-1773});
-        height: calc(#{26px*$fix-1773});
-        border-radius: calc(#{26px*$fix-1773});
-        margin-left: calc(#{315.5px*$fix-1773});
-        transform: translateY(calc(#{-12px*$fix-1773}));
-    }
-}
-
-@media screen and (max-width:1350px){
-    .user-events{
-        margin-top: calc(#{105px*$fix-1350});
-    }
-    
-    .user-events__header{
-        font-size: calc(#{49px*$fix-1350});
-        margin-left: calc(#{269px*$fix-1350});
-    }
-    
-    .user-events__registered{
-        margin-top: calc(#{76px*$fix-1350});
-    }
-    
-    .user-hr{
-        height: calc(#{202px*$fix-1350});
-        margin-left: calc(#{59.5px*$fix-1350});
-        margin-top: calc(#{219px*$fix-1350});
-        border: solid calc(#{5px*$fix-1350}) #29abe2;
-    }
-    
-    .user-details{
-        margin-top: calc(#{219.1px*$fix-1350});
-        margin-bottom: calc(#{350px*$fix-1350});
-        margin-left: calc(#{183px*$fix-1350});
-    }
-    
-    .user-details__name{
-        font-size: calc(#{70px*$fix-1350});
-        padding: calc(#{11px*$fix-1350}) calc(#{34px*$fix-1350}); 
-    }
-    
-    .user-details__number{
-        font-size: calc(#{35px*$fix-1350});
-        border-radius: calc(#{15px*$fix-1350});
-        padding: calc(#{6px*$fix-1350}) calc(#{26px*$fix-1350});
-        margin-top: calc(#{29.5px*$fix-1350});
-        margin-left: calc(#{96.5px*$fix-1350});
-    }
-    
-    .user-details__circle{
-        width: calc(#{26px*$fix-1350});
-        height: calc(#{26px*$fix-1350});
-        border-radius: calc(#{26px*$fix-1350});
-        margin-left: calc(#{315.5px*$fix-1350});
-        transform: translateY(calc(#{-12px*$fix-1350}));
-    }
-}
-
-@media screen and (max-width:1001px){
-    .user-events{
-        margin-top: calc(#{105px*$fix-1001});
-    }
-    
-    .user-events__header{
-        font-size: calc(#{49px*$fix-1001});
-        margin-left: calc(#{269px*$fix-1001});
-    }
-    
-    .user-events__registered{
-        margin-top: calc(#{76px*$fix-1001});
-    }
-    
-    .user-hr{
-        height: calc(#{202px*$fix-1001});
-        margin-left: calc(#{59.5px*$fix-1001});
-        margin-top: calc(#{219px*$fix-1001});
-        border: solid calc(#{5px*$fix-1001}) #29abe2;
-    }
-    
-    .user-details{
-        margin-top: calc(#{219.1px*$fix-1001});
-        margin-bottom: calc(#{350px*$fix-1001});
-        margin-left: calc(#{183px*$fix-1001});
-    }
-    
-    .user-details__name{
-        font-size: calc(#{70px*$fix-1001});
-        padding: calc(#{11px*$fix-1001}) calc(#{34px*$fix-1001}); 
-    }
-    
-    .user-details__number{
-        font-size: calc(#{35px*$fix-1001});
-        border-radius: calc(#{15px*$fix-1001});
-        padding: calc(#{6px*$fix-1001}) calc(#{26px*$fix-1001});
-        margin-top: calc(#{29.5px*$fix-1001});
-        margin-left: calc(#{96.5px*$fix-1001});
-    }
-    
-    .user-details__circle{
-        width: calc(#{26px*$fix-1001});
-        height: calc(#{26px*$fix-1001});
-        border-radius: calc(#{26px*$fix-1001});
-        margin-left: calc(#{315.5px*$fix-1001});
-        transform: translateY(calc(#{-12px*$fix-1001}));
-    }
+.spaceship{
+    width: 283px;
+    height: 280px;
 }
