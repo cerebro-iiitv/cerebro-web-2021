@@ -2,7 +2,7 @@ import React from "react";
 import "./PastGlimpse.scss";
 
 const PastGlimpse = () => {
-  const width = window.screen.width;
+  
   return (
     <div className="gallery">
       <h1 className="gallery__title section-title">Past year Glimpses</h1>
@@ -11,53 +11,45 @@ const PastGlimpse = () => {
           <div
             className="wide"
             style={{
-              backgroundImage: `url('./media/botrun${
-                width <= 1000 ? "_mobile" : ""
-              }.jpg')`
+              backgroundImage: `url('./media/botrun.webp')`
             }}
           ></div>
           <div
             className="tall"
             style={{
-              backgroundImage: "url('./media/director.png')"
+              backgroundImage: "url('./media/director.webp')"
             }}
           ></div>
           <div
             className="big"
             style={{
-              backgroundImage: `url('./media/team${
-                width <= 2000 ? "_mobile" : ""
-              }.png')`
+              backgroundImage: `url('./media/team.webp')`
             }}
           ></div>
           <div
             className="wide"
-            style={{ backgroundImage: "url('./media/game.jpg')" }}
+            style={{ backgroundImage: "url('./media/game.webp')" }}
           ></div>
           <div
             className="tall"
             style={{
-              backgroundImage: `url('./media/tabletview${
-                width <= 1000 ? "_mobile" : ""
-              }.jpg')`
+              backgroundImage: `url('./media/tabletview.webp')`
             }}
           ></div>
           <div
             className=""
-            style={{ backgroundImage: `url('./media/direction.jpg')` }}
+            style={{ backgroundImage: `url('./media/direction.webp')` }}
           ></div>
           <div
             className="wide"
             style={{
-              backgroundImage: `url('./media/baymax${
-                width <= 1000 ? "_mobile" : ""
-              }.jpeg')`
+              backgroundImage: `url('./media/baymax.webp')`
             }}
           ></div>
           <div
             className=""
             style={{
-              backgroundImage: `url('./media/webhead.png')`
+              backgroundImage: `url('./media/webhead.webp')`
             }}
           ></div>
         </div>
