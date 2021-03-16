@@ -42,9 +42,9 @@ class UserDashboard extends React.Component{
                     <span className="user-events__header">Registered Events</span>
                     <div className="user-events__registered">{RegisteredEvents}</div>
                 </div>
-                <div className="user-hr-container">
+                {/* <div className="user-hr-container">
                   <hr className="user-hr"/>
-                </div>
+                </div> */}
                 
                 <div className="user-details">
                   <div>

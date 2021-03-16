@@ -6,12 +6,11 @@ $fix-1001: 0.37;
 
 .registered-event{
     display: flex;  
-    justify-content: flex-start;
-    column-gap: 125px;
-    margin: 0;
-    margin-left: 22px;
-    margin-bottom: 52px;
-    width: max-content;
+    justify-content: space-between;
+    width: 95%;
+    &__titleContainer{
+        width: 35%;
+    }
 }
 
 .registered-event_title{
@@ -24,6 +23,7 @@ $fix-1001: 0.37;
     font-family: Gilroy-Light;
     font-size: 31px; 
     color: #BFBFBF;
+    width: 60%;
 }
 
 .registered-event_delete{
