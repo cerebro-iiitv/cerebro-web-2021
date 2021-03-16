@@ -6,6 +6,9 @@
   margin: 0 auto;
   justify-content: space-between;
   align-items: center;
+  border: 1px solid #1bbcf1;
+  padding: 50px 20px;
+  border-radius: 20px ;
 
   &__container {
     height: max-content;
@@ -23,6 +26,7 @@
       line-height: 1.22;
       letter-spacing: normal;
       color: #ffffff;
+      padding-bottom: 20px;
 
       @media screen and (max-width: $mobile-view) {
         font-size: 40px;
@@ -166,7 +170,7 @@
         &__reg {
           text-align: center;
           margin: 0 auto;
-          padding-top: 30px;
+          padding-top: 40px;
           cursor: pointer;
           font-size: 18px;
           a {
@@ -175,7 +179,7 @@
             padding: 8px 14px;
             border: 1px solid $color-style;
             font-weight: 800;
-            border-radius: 7px;
+            border-radius: 3px;
 
             @media screen and (max-width: $mobile-view) {
               position: fixed;
@@ -204,15 +208,17 @@
       font-family: "Gilroy-Light", Arial, Helvetica, sans-serif;
       letter-spacing: 2px;
       font-size: 20px;
-      border-radius: 33px;
+      border-radius: 10px;
       text-align: center;
       display: inline-block;
       padding: 14px 50px;
       font-weight: 1000;
       text-transform: uppercase;
       box-shadow: 0 3px 6px 0 rgba(105, 224, 216, 0.16);
-      background-color: #1bbcf1;
+      background-color: transparent;
       cursor: pointer;
+      border: 1px solid #1bbcf1;
+      transition: all 0.3s;
 
       @media screen and (max-width: $mobile-view) {
         position: fixed;
@@ -224,6 +230,47 @@
         padding: 0px;
         padding-top: 10px;
       }
+    }
+
+    &__input{
+      font-family: "Gilroy-Light", Arial, Helvetica, sans-serif;
+      letter-spacing: 2px;
+      font-size: 20px;
+      border-radius: 10px 0px 0px 10px;
+      text-align: center;
+      display: inline-block;
+      padding: 14px 30px;
+      font-weight: 1000;
+      text-transform: uppercase;
+      box-shadow: 0 3px 6px 0 rgba(105, 224, 216, 0.16);
+      background-color: transparent;
+      border: 1px solid #1bbcf1;
+      transition: all 0.3s;
+      color: #ffffff;
+      outline: none;
+    }
+
+    &__join{
+      font-family: "Gilroy-Light", Arial, Helvetica, sans-serif;
+      letter-spacing: 2px;
+      font-size: 20px;
+      border-radius: 0px 10px 10px 0px;
+      text-align: center;
+      display: inline-block;
+      padding: 14px 30px;
+      font-weight: 1000;
+      text-transform: uppercase;
+      box-shadow: 0 3px 6px 0 rgba(105, 224, 216, 0.16);
+      background-color: #1bbcf1;
+      border: 1px solid #1bbcf1;
+      transition: all 0.3s;
+      cursor: pointer;
+      outline: none;
+    }
+
+    &__button:hover{
+      background-color: #03b0ef;
+      // color: black;
     }
   }
 }

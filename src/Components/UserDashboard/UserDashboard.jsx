@@ -16,7 +16,7 @@ class UserDashboard extends React.Component{
   componentDidMount(){
     const user_id = localStorage.getItem('user_id')
     if(user_id){
-      fetch(`https://cerebro.pythonanywhere.com/registration/dashboard/${user_id}`)
+      fetch(`https://cerebro.pythonanywhere.com/dashboard/${user_id}`)
       .then(res=>res.json())
       .then(data=>{
         console.log(data)
@@ -27,10 +27,10 @@ class UserDashboard extends React.Component{
   
 
   render(){  
-    const a =[1,2,3];
-    const RegisteredEvents = a.map((e)=> <RegisteredEvent/>)
+    // const a =[1,2,3];
+    // const RegisteredEvents = a.map((e)=> <RegisteredEvent/>)
 
-    // const RegisteredEvents = this.state.details.user_team?.length ? this.state.details.user_team.map((e)=>{return <RegisteredEvent/>}) : null;
+    const RegisteredEvents = this.state.details.user_team?.length ? this.state.details.user_team.map((e)=>{return <RegisteredEvent name={e.event_name} code = {e.team_code}/>}) : null;
 
 
 

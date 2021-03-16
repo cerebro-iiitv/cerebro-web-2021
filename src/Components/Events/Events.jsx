@@ -14,18 +14,33 @@ class Events extends Component {
 
     this.state = {
       eventIndex: 0,
-      selectedEvent: "Tech Hunt",
+      selectedEvent: "BTQ",
       pdf:
-        "https://github.com/cerebro-iiitv/cerebro-web-2020/files/4276790/Tech.Hunt.pdf"
+        "https://github.com/cerebro-iiitv/cerebro-web-2020/files/4276790/Tech.Hunt.pdf",
+      teamCode:null
     };
   }
   updateEvent = (index, event, pdf) => {
+    this.removeteamCode()
+    console.log(index,event,pdf)
     this.setState({
       eventIndex: index,
       selectedEvent: event,
       pdf: pdf
     });
   };
+
+  updateteamCode = (code) => {
+    this.setState({ 
+      teamCode:code
+    })
+  }
+
+  removeteamCode = () => {
+    this.setState({
+      teamCode:null
+    })
+  }
 
   render() {
     const { events, contacts } = this.props;
@@ -36,6 +51,7 @@ class Events extends Component {
           <div>
             <Circle index={this.state.eventIndex} />
           </div>
+          <div style={{display:'flex', justifyContent:'space-between', width:'80%'}}>
           <div>
             <Main
               events={events}
@@ -43,6 +59,8 @@ class Events extends Component {
               title={this.state.selectedEvent}
               contacts={contacts}
               pdf={this.state.pdf}
+              teamCode = {this.state.teamCode}
+              updateTeamCode = {this.updateteamCode}
             />
           </div>
           <div>
@@ -52,6 +70,8 @@ class Events extends Component {
               index={this.state.eventIndex}
             />
           </div>
+          </div>
+          
         </div>
       </div>
     );

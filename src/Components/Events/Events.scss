@@ -3,9 +3,9 @@
 .event {
   width: 80vw;
   display: flex;
-  flex-flow: row;
-  justify-content: space-between;
-  margin: 100px auto 0 auto;
+  // flex-flow: row;
+  // justify-content: space-around;
+  margin: 70px auto 0 auto;
 
   @media screen and (max-width: $mobile-view) {
     flex-flow: column;
