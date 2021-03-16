@@ -148,7 +148,6 @@ class Main extends Component {
 
     return (
       
-      <div>
         <div className="main">
           <div className="main__container">
             <h1 className="main__container__title">{this.props.title}</h1>
@@ -162,10 +161,9 @@ class Main extends Component {
             </div>
           </div>
           {registerButton}
-          <p>{this.props.teamCode}</p>
+          <p className="confirmationMsg">{this.props.teamCode}</p>
         </div>
           
-      </div>
     );
   }
 }

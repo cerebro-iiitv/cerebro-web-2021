@@ -51,7 +51,7 @@ class Events extends Component {
           <div>
             <Circle index={this.state.eventIndex} />
           </div>
-          <div style={{display:'flex', justifyContent:'space-between', width:'80%'}}>
+          <div style={{display:'flex', width:'100%', justifyContent:'space-between'}}>
           <div>
             <Main
               events={events}
@@ -71,6 +71,7 @@ class Events extends Component {
             />
           </div>
           </div>
+          
           
         </div>
       </div>

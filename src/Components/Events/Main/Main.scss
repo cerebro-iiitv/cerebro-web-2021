@@ -2,12 +2,12 @@
 @import "../../../scss/base";
 
 .main {
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
   justify-content: space-between;
   align-items: center;
   border: 1px solid #1bbcf1;
-  padding: 50px 20px;
+  padding: 30px 10px;
   border-radius: 20px ;
 
   &__container {
@@ -207,11 +207,11 @@
     &__button {
       font-family: "Gilroy-Light", Arial, Helvetica, sans-serif;
       letter-spacing: 2px;
-      font-size: 20px;
+      font-size: 16px;
       border-radius: 10px;
       text-align: center;
       display: inline-block;
-      padding: 14px 50px;
+      padding: 10px 30px;
       font-weight: 1000;
       text-transform: uppercase;
       box-shadow: 0 3px 6px 0 rgba(105, 224, 216, 0.16);
@@ -234,12 +234,12 @@
 
     &__input{
       font-family: "Gilroy-Light", Arial, Helvetica, sans-serif;
-      letter-spacing: 2px;
-      font-size: 20px;
+      letter-spacing: 1px;
+      font-size: 16px;
       border-radius: 10px 0px 0px 10px;
       text-align: center;
       display: inline-block;
-      padding: 14px 30px;
+      padding: 10px 30px;
       font-weight: 1000;
       text-transform: uppercase;
       box-shadow: 0 3px 6px 0 rgba(105, 224, 216, 0.16);
@@ -253,11 +253,11 @@
     &__join{
       font-family: "Gilroy-Light", Arial, Helvetica, sans-serif;
       letter-spacing: 2px;
-      font-size: 20px;
+      font-size: 16px;
       border-radius: 0px 10px 10px 0px;
       text-align: center;
       display: inline-block;
-      padding: 14px 30px;
+      padding: 10px 30px;
       font-weight: 1000;
       text-transform: uppercase;
       box-shadow: 0 3px 6px 0 rgba(105, 224, 216, 0.16);
@@ -300,4 +300,8 @@
       margin-top: 5px;
     }
   }
+}
+.confirmationMsg{
+  margin-top: 15px;
+  text-align: center;
 }
