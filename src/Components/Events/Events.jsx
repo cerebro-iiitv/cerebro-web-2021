@@ -14,7 +14,7 @@ class Events extends Component {
 
     this.state = {
       eventIndex: 0,
-      selectedEvent: "BTQ",
+      selectedEvent: "Tech Hunt",
       pdf:
         "https://github.com/cerebro-iiitv/cerebro-web-2020/files/4276790/Tech.Hunt.pdf",
       teamCode:null

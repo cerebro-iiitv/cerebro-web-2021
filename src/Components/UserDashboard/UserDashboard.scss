@@ -12,6 +12,15 @@ $fix-1001: 0.37;
     padding: 30px 0;
     height: 650px;
     margin-bottom: 100px;
+
+
+
+    @media screen and (max-width:1000px) {
+        flex-flow: column-reverse;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 50px;
+    }
 }
 
 .user-events{
@@ -28,6 +37,17 @@ $fix-1001: 0.37;
     font-size: 36px;
     letter-spacing: 1px;
     font-weight: 800;
+
+    @media screen and (max-width:1200px) {
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    @media screen and (max-width:1000px) {
+        font-size: 20px;
+        font-weight: 600;
+    }
+
     // margin-left: 269px;
 }
 
@@ -51,12 +71,11 @@ $fix-1001: 0.37;
         border: 1px solid #202020;
         background-color:#202020;
       }
-    
-      // For Internet Explorer
-    //   & {
-    //     scrollbar-face-color: #268db9;
-    //     scrollbar-track-color: black;
-    //   }
+
+    @media screen and (max-width:1000px){
+        height: 200px;
+        margin-top: 40px;
+    }
 }
 
 .user-hr-container{
@@ -89,11 +108,20 @@ $fix-1001: 0.37;
     color: #29abe2;
     font-size: 51px;
     border-bottom: solid 1px #268db9;
-    width: 280px;
+    // width: 280px;
     box-sizing: border-box;
     padding: 10px;
     display: flex;
-    justify-content: center;       
+    justify-content: center;  
+
+    @media screen and (max-width:1200px) {
+        font-size: 40px;
+    }
+
+    @media screen and (max-width:1000px) {
+        font-size: 30px;
+    }
+    
 }
 
 .user-details__number{
@@ -120,4 +148,14 @@ $fix-1001: 0.37;
 .spaceship{
     width: 283px;
     height: 280px;
+
+    @media screen and (max-width:1200px) {
+        width: 250px;
+        height: 250px;
+    }
+
+    @media screen and (max-width:1000px) {
+        width: 200px;
+        height: 200px;
+    }
 }

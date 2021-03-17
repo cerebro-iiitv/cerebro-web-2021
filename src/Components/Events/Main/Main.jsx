@@ -10,15 +10,46 @@ class Main extends Component {
 
   createTeamHandler = (id) => {
     const user_id = localStorage.getItem('user_id')
-    axios.post('https://cerebro.pythonanywhere.com/registration/team-register/', {
+    // axios.post('https://cerebro.pythonanywhere.com/registration/team-register/', {
+    //   account:user_id,
+    //   event:id
+    // }).then(res=>{
+    //   console.log(res)
+    //   this.props.updateTeamCode(res.data.Success)
+    // }).catch(e=>{
+    //   console.log(e.status, 'hi')
+    //   this.props.updateTeamCode('Error Occured!')
+    // })
+    this.fetchCall(user_id, id)
+  }
+
+
+  fetchCall = async (user_id, id) => {
+    let res;
+    let json;
+
+    let obj = {
       account:user_id,
       event:id
-    }).then(res=>{
-      this.props.updateTeamCode(res.data.Success)
-    }).catch(e=>{
-      this.props.updateTeamCode('Error Occured!')
-    })
+    }
+
+     let form = new FormData()
+     form.append('account', user_id)
+     form.append('event', id)
+
+    try{
+      res = await fetch('https://cerebro.pythonanywhere.com/registration/team-register/',{
+        method:'POST',
+        body:form
+      })
+      json= await res.json();
+      console.log(json)
+      }
+      catch(e){
+      console.log(e.Error)
+      }
   }
+
 
   onInputChange = (event) => {
     this.setState({inputCode:event.target.value})
@@ -66,26 +97,29 @@ class Main extends Component {
             <div className="main__container__content__left__description">
               <p>{event.description}</p>
             </div>
-            <table className="events-info-table">
-              <tr>
-                <td className="events-info-table__key">Prize worth</td>
-                <td className="events-info-table__value">{event.prize}</td>
-              </tr>
-              <tr>
-                <td className="events-info-table__key">Team Size</td>
-                <td className="events-info-table__value">{event.team_size}</td>
-              </tr>
-              <tr>
-                <td className="events-info-table__key">Venue</td>
-                <td className="events-info-table__value">{event.venue}</td>
-              </tr>
-              <tr>
-                <td className="events-info-table__key">Time</td>
-                <td className="events-info-table__value">
-                  {event.start_time} to {event.end_time}
-                </td>
-              </tr>
-            </table>
+            <div className="event-info-table-container">
+              <table className="events-info-table">
+                <tr>
+                  <td className="events-info-table__key">Prize worth</td>
+                  <td className="events-info-table__value">{event.prize}</td>
+                </tr>
+                <tr>
+                  <td className="events-info-table__key">Team Size</td>
+                  <td className="events-info-table__value">{event.team_size}</td>
+                </tr>
+                <tr>
+                  <td className="events-info-table__key">Venue</td>
+                  <td className="events-info-table__value">{event.venue}</td>
+                </tr>
+                <tr>
+                  <td className="events-info-table__key">Time</td>
+                  <td className="events-info-table__value">
+                    {event.start_time} to {event.end_time}
+                  </td>
+                </tr>
+              </table>
+            </div>
+            
           </>
         );
       } else {

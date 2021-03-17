@@ -22,8 +22,25 @@ class UserDashboard extends React.Component{
         console.log(data)
         this.setState({details:data})
       })
+      // this.fetchCall(user_id)
     }
   }
+
+
+   
+
+  // fetchCall = async (user_id) => {
+  //   let json;
+  //   try{
+  //     const res = await fetch(`https://cerebro.pythonanywhere.com/dashboard/${user_id}`);
+  //     json= await res.json();
+  //     console.log(json)
+  //     }
+  //     catch(e){
+  //     console.log(e , json)
+  //     }
+  // }
+
   
 
   render(){  
