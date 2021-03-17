@@ -7,7 +7,7 @@
   justify-content: space-between;
   align-items: center;
   border: 1px solid #1bbcf1;
-  padding: 30px 10px;
+  padding: 25px 10px;
   border-radius: 20px ;
 
   &__container {
@@ -28,8 +28,12 @@
       color: #ffffff;
       padding-bottom: 20px;
 
-      @media screen and (max-width: $mobile-view) {
+      @media screen and (max-width:1200px){
         font-size: 40px;
+      }
+
+      @media screen and (max-width: $mobile-view) {
+        font-size: 20px;
         line-height: 1;
       }
     }
@@ -148,6 +152,10 @@
         padding: 20px;
         padding-top: 0;
 
+        @media screen and (max-width:1200px) {
+          padding: 10px;
+        }
+
         &__main {
           display: flex;
           align-items: center;
@@ -173,6 +181,9 @@
           padding-top: 40px;
           cursor: pointer;
           font-size: 18px;
+          @media screen and (max-width:$mobile-view) {
+            padding-top: 20px;
+          }
           a {
             color: $color-style;
             transition: 0.15s;
@@ -221,14 +232,9 @@
       transition: all 0.3s;
 
       @media screen and (max-width: $mobile-view) {
-        position: fixed;
-        bottom: 75px;
-        width: 130px;
-        height: 35px;
-        font-size: 19px;
-        text-align: center;
-        padding: 0px;
-        padding-top: 10px;
+        font-size: 14px;
+        padding: 5px 15px;
+        // padding: 0;
       }
     }
 
@@ -248,6 +254,10 @@
       transition: all 0.3s;
       color: #ffffff;
       outline: none;
+      @media screen and (max-width: $mobile-view) {
+        font-size: 14px;
+        padding: 5px 15px;
+      }
     }
 
     &__join{
@@ -266,6 +276,10 @@
       transition: all 0.3s;
       cursor: pointer;
       outline: none;
+      @media screen and (max-width: $mobile-view) {
+        font-size: 14px;
+        padding: 5px 15px;
+      }
     }
 
     &__button:hover{
@@ -290,11 +304,25 @@
     color: $color-style;
     text-align: right;
     font-weight: 800;
+    @media screen and (max-width:1200px){
+      font-size: 16px;
+    }
+
+    @media screen and (max-width: $mobile-view) {
+      font-size: 14px;
+    }
   }
 
   &__value {
     padding-left: 10px;
     line-height: 1.4;
+
+    @media screen and (max-width:1200px){
+      font-size: 16px;
+    }
+    @media screen and (max-width: $mobile-view) {
+      font-size: 14px;
+    }
 
     &__call {
       margin-top: 5px;
@@ -304,4 +332,11 @@
 .confirmationMsg{
   margin-top: 15px;
   text-align: center;
+}
+
+.registerBtnContainer{
+  display: flex;
+  @media screen and (max-width: $mobile-view) {
+    flex-flow: column;
+  }
 }

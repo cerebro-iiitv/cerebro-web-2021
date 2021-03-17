@@ -46,7 +46,7 @@ class Main extends Component {
     const eventList = this.props.events.map((event, index) => {
       if (index === this.props.index) {
         if(event.team_size>1){
-           registerButton = <div style = {{display:'flex'}}>
+           registerButton = <div className="registerBtnContainer">
             <div className="main__container__content__right__reg" onClick={()=>this.createTeamHandler(event.id)}>
               <span className="main__container__button">Create a team</span>
             </div>
