@@ -1,0 +1,52 @@
+@import "../../fonts.css";
+
+.faqs{
+    margin-top: 85px;
+    margin-bottom: 87px;
+}
+
+.faqs__title{
+    font-family: Gilroy-ExtraBold;
+    font-size: 30px;
+}
+
+.faqs__question{
+    margin-top: 40px;
+    margin-bottom: 28px;
+    font-family: Gilroy-Light;
+    font-size: 28px;
+    color: #01c5e3;
+}
+
+.faqs__answer{
+    font-family: Gilroy-Light;
+    font-size: 24px;
+    font-style: italic;
+    color: #d7d7d7;
+}
+
+.faqs__links{
+    color: #01c5e3;  
+}
+
+@media screen and (max-width:1000px){
+    .faqs{
+        margin: 29px;
+        margin-bottom: 40px;
+    }
+
+    .faqs__title{
+        font-size: 20px;
+    }
+
+    .faqs__question{
+        margin-top: 20px;
+        margin-bottom: 14px;
+        font-size: 14px;
+    }
+    
+    .faqs__answer{
+        font-size: 12px;
+    }
+
+}
