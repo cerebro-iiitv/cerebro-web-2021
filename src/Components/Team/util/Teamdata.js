@@ -86,7 +86,7 @@ export const teamdata = {
     }
   ],
 
-  "Web Eng": [
+  "Web Dev": [
     {
       "id": 13,
       "name": "Aman Raj",
