@@ -2,10 +2,13 @@
 @import "../../../scss/base";
 
 .main {
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
-  justify-content: space-between;
-  align-items: center;
+  border: 1px solid #1bbcf1;
+  padding: 25px 20px;
+  border-radius: 20px ;
+  overflow-x: hidden;
+
 
   &__container {
     height: max-content;
@@ -23,10 +26,16 @@
       line-height: 1.22;
       letter-spacing: normal;
       color: #ffffff;
+      padding-bottom: 20px;
+
+      @media screen and (max-width:1200px){
+        font-size: 40px;
+      }
 
       @media screen and (max-width: $mobile-view) {
-        font-size: 40px;
+        font-size: 20px;
         line-height: 1;
+        padding-bottom: 10px;
       }
     }
 
@@ -40,6 +49,7 @@
         width: 100%;
         margin: 10px auto;
         overflow: visible auto;
+        overflow-x: hidden;
       }
 
       // Height Media Query
@@ -70,6 +80,7 @@
         @media screen and (max-width: $mobile-view) {
           width: 100%;
         }
+        
 
         @media screen and (max-height: 600px) {
           margin: auto;
@@ -96,12 +107,14 @@
 
           @media screen and (max-width: $mobile-view) {
             padding-bottom: 10px;
-            font-size: 20px;
+            font-size: 14px;
             height: max-content;
+            text-align: center;
+            margin:  auto;
           }
 
           @media screen and (max-height: 600px) {
-            font-size: 12px;
+            font-size: 14px;
           }
         }
 
@@ -144,6 +157,10 @@
         padding: 20px;
         padding-top: 0;
 
+        @media screen and (max-width:1200px) {
+          padding: 10px;
+        }
+
         &__main {
           display: flex;
           align-items: center;
@@ -166,16 +183,19 @@
         &__reg {
           text-align: center;
           margin: 0 auto;
-          padding-top: 30px;
+          padding-top: 40px;
           cursor: pointer;
           font-size: 18px;
+          @media screen and (max-width:$mobile-view) {
+            padding-top: 20px;
+          }
           a {
             color: $color-style;
             transition: 0.15s;
             padding: 8px 14px;
             border: 1px solid $color-style;
             font-weight: 800;
-            border-radius: 7px;
+            border-radius: 3px;
 
             @media screen and (max-width: $mobile-view) {
               position: fixed;
@@ -203,27 +223,73 @@
     &__button {
       font-family: "Gilroy-Light", Arial, Helvetica, sans-serif;
       letter-spacing: 2px;
-      font-size: 20px;
-      border-radius: 33px;
+      font-size: 16px;
+      border-radius: 5px;
       text-align: center;
       display: inline-block;
-      padding: 14px 50px;
+      padding: 10px 30px;
+      font-weight: 1000;
+      text-transform: uppercase;
+      box-shadow: 0 3px 6px 0 rgba(105, 224, 216, 0.16);
+      background-color: transparent;
+      cursor: pointer;
+      border: 1px solid #1bbcf1;
+      transition: all 0.3s;
+
+      @media screen and (max-width: $mobile-view) {
+        font-size: 14px;
+        padding: 5px 15px;
+        // padding: 0;
+      }
+    }
+
+    &__input{
+      font-family: "Gilroy-Light", Arial, Helvetica, sans-serif;
+      letter-spacing: 1px;
+      font-size: 16px;
+      border-radius: 5px 0px 0px 5px;
+      text-align: center;
+      display: inline-block;
+      padding: 10px 30px;
+      font-weight: 1000;
+      text-transform: uppercase;
+      box-shadow: 0 3px 6px 0 rgba(105, 224, 216, 0.16);
+      background-color: transparent;
+      border: 1px solid #1bbcf1;
+      transition: all 0.3s;
+      color: #ffffff;
+      outline: none;
+      @media screen and (max-width: $mobile-view) {
+        font-size: 14px;
+        padding: 5px 15px;
+      }
+    }
+
+    &__join{
+      font-family: "Gilroy-Light", Arial, Helvetica, sans-serif;
+      letter-spacing: 2px;
+      font-size: 16px;
+      border-radius: 0px 5px 5px 0px;
+      text-align: center;
+      display: inline-block;
+      padding: 10px 30px;
       font-weight: 1000;
       text-transform: uppercase;
       box-shadow: 0 3px 6px 0 rgba(105, 224, 216, 0.16);
       background-color: #1bbcf1;
+      border: 1px solid #1bbcf1;
+      transition: all 0.3s;
       cursor: pointer;
-
+      outline: none;
       @media screen and (max-width: $mobile-view) {
-        position: fixed;
-        bottom: 75px;
-        width: 130px;
-        height: 35px;
-        font-size: 19px;
-        text-align: center;
-        padding: 0px;
-        padding-top: 10px;
+        font-size: 14px;
+        padding: 5px 15px;
       }
+    }
+
+    &__button:hover{
+      background-color: #03b0ef;
+      // color: black;
     }
   }
 }
@@ -231,6 +297,10 @@
 .events-info-table {
   font-size: 18px;
   border: 0px;
+
+  @media screen and (max-width:1000px) {
+    width: 100%;
+  }
 
   &__key, &__value {
     box-sizing: border-box;
@@ -241,16 +311,43 @@
     width: 115px;
     display: block;
     color: $color-style;
-    text-align: right;
+    text-align: left;
     font-weight: 800;
+    @media screen and (max-width:1200px){
+      font-size: 16px;
+    }
+
+    @media screen and (max-width: $mobile-view) {
+      // width: 100%;
+      text-align: right;
+      font-size: 14px;
+    }
   }
 
   &__value {
     padding-left: 10px;
     line-height: 1.4;
 
+    @media screen and (max-width:1200px){
+      font-size: 16px;
+    }
+    @media screen and (max-width: $mobile-view) {
+      font-size: 14px;
+    }
+
     &__call {
       margin-top: 5px;
     }
+  }
+}
+.confirmationMsg{
+  margin-top: 15px;
+  text-align: center;
+}
+
+.registerBtnContainer{
+  display: flex;
+  @media screen and (max-width: $mobile-view) {
+    flex-flow: column;
   }
 }
