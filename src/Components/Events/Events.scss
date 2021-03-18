@@ -5,17 +5,32 @@
   display: flex;
   flex-flow: row;
   justify-content: space-between;
-  margin: 100px auto 0 auto;
-
-  @media screen and (max-width: $mobile-view) {
+  margin: 70px auto 0 auto;
+   @media screen and (max-width: $mobile-view) {
     flex-flow: column;
-    align-items: center;
-    margin: 0px auto;
-
-    position: fixed;
-    bottom: 125px;
-    width: 100%;
-    padding: 0 10%;
-    box-sizing: border-box;
+    margin: 0 auto;
   }
+  
+
+  &__rightContainer{
+    display: flex;
+    justify-content: space-between;
+    @media screen and (max-width:$mobile-view) {
+      justify-content: center;
+    }
+  }
+
+  
+
+  // @media screen and (max-width: $mobile-view) {
+  //   flex-flow: column;
+  //   align-items: center;
+  //   margin: 0px auto;
+  //   justify-content: center;
+  //   position: fixed;
+  //   bottom: 125px;
+  //   width: 100%;
+  //   padding: 0 10%;
+  //   box-sizing: border-box;
+  // }
 }

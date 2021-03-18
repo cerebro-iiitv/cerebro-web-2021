@@ -32,6 +32,10 @@
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
 
+    @media screen and (max-width:1200px) {
+      width: 150px;
+    }
+
     @media screen and (max-width: $mobile-view) {
       height: 45px;
       width: max-content;
@@ -54,6 +58,10 @@
       opacity: 0.7;
       transition: 0.15s;
       list-style-type: none;
+
+      @media screen and (max-width:1200px) {
+        font-size: 16px;
+      }
 
       @media screen and (max-width: $mobile-view) {
         margin-left: 10px;
