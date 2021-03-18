@@ -11,6 +11,14 @@ $fix-1001: 0.37;
     &__titleContainer{
         width: 35%;
     }
+
+    &__code{
+        font-size: 16px;
+        @media screen and (max-width:1000px) {
+            font-size: 10px;
+        }
+    }
+
 }
 
 .registered-event_title{
@@ -21,7 +29,7 @@ $fix-1001: 0.37;
 
 .registered-event_date{
     font-family: Gilroy-Light;
-    font-size: 31px; 
+    font-size: 25px; 
     color: #BFBFBF;
     width: 60%;
 }
@@ -29,6 +37,7 @@ $fix-1001: 0.37;
 .registered-event_delete{
     height: 35px;
     width: 35px;
+    cursor: pointer;
 }
 
 @media screen and (max-width:1773px){
@@ -43,9 +52,7 @@ $fix-1001: 0.37;
         font-size: calc(#{40px*$fix-1773});
     }
     
-    .registered-event_date{
-        font-size: calc(#{40px*$fix-1773});
-    }
+   
     
     .registered-event_delete{
         height: calc(#{35px*$fix-1773});

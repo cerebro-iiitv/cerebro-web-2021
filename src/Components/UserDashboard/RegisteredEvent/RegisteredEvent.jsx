@@ -7,15 +7,16 @@ const RegisteredEvents = (props)=>{
         <div className="registered-event">
             <div className="registered-event__titleContainer">
                 <span className="registered-event_title">{props.name}</span>
-                <p>{props.code}</p>
+                <p className="registered-event__code">{props.code}</p>
             </div>
             
-            <span className="registered-event_date">27 March, 10:00-11:00</span>
+            <span className="registered-event_date">{props.start} to {props.end}</span>
             <div>
                 <img
                     src="media/delete_icon.png"
                     alt="delete_icon"
                     className="registered-event_delete"
+                    onClick={()=>props.onDeleteEvent(props.id)}
                 />
             </div>
         </div>

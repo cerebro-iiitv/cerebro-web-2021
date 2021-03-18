@@ -3,6 +3,7 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import RegisteredEvent from "../UserDashboard/RegisteredEvent/RegisteredEvent";
 import "./UserDashboard.scss"
+import axios from "axios";
 
 
 
@@ -26,6 +27,23 @@ class UserDashboard extends React.Component{
     }
   }
 
+  onDeleteEvent  = (id) => { 
+    axios.delete(`https://cerebro.pythonanywhere.com/registration/team-register/${id}`)
+    .then(res=>{
+      console.log(res)
+      const temp = this.state.details.user_team.filter(event => {
+        return event.id !== id
+      })
+      const obj = {
+        ...this.state.details
+      }
+      obj.user_team = temp
+      this.setState({
+        details:obj
+      })
+    })    
+  }
+
 
    
 
@@ -47,7 +65,7 @@ class UserDashboard extends React.Component{
     // const a =[1,2,3];
     // const RegisteredEvents = a.map((e)=> <RegisteredEvent/>)
 
-    const RegisteredEvents = this.state.details.user_team?.length ? this.state.details.user_team.map((e)=>{return <RegisteredEvent name={e.event_name} code = {e.team_code}/>}) : null;
+    const RegisteredEvents = this.state.details.user_team?.length ? this.state.details.user_team.map((e)=>{return <RegisteredEvent name={e.event_name} start={e.start_time} end = {e.end_time} code = {e.team_code} id = {e.id} onDeleteEvent= {this.onDeleteEvent}/>}) : null;
 
 
 
