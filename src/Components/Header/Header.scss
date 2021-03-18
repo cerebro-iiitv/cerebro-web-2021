@@ -26,11 +26,10 @@
     width: 106px;
     height: 98px;
     animation: glow-2 2s linear infinite alternate;
-    @media screen and (max-width:1000px) {
+    @media screen and (max-width: 1000px) {
       width: 80px;
       height: 75px;
     }
-
   }
 
   &__links {
@@ -113,8 +112,14 @@
     img {
       height: 1em;
       width: 1em;
+      border-radius: 50%;
       transform: translate(0, 0.1rem);
     }
+  }
+
+  &__user {
+    height: 1.4em !important;
+    width: 1.4em !important;
   }
 
   @media screen and (max-width: $mobile-view) {
