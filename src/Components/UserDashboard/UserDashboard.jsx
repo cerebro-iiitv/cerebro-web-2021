@@ -26,8 +26,11 @@ class UserDashboard extends React.Component {
   }
 
   onDeleteEvent = (id) => {
-    axios.delete(`https://cerebro.pythonanywhere.com/registration/team-register/${id}`)
-      .then(res => {
+    axios.delete(`https://cerebro.pythonanywhere.com/registration/team-register/${id}`, {
+        headers: {
+          'Authorization':'Token 32a66c85f4ba7c0a4cc629f30c55104cf3535088'
+        },
+    }).then(res => {
         console.log(res)
         const temp = this.state.details.user_team.filter(event => {
           return event.id !== id

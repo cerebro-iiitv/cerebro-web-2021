@@ -2,13 +2,19 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import './navbar_style.scss'
 import 'font-awesome/css/font-awesome.min.css';
+import { GoogleLogin } from "react-google-login";
+import axios from 'axios';
+import Cookies from 'js-cookie';
 
 class Navbar extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			drawerOut: false,
-			open: false
+			open: false,
+			user_id:null,
+			imageUrl:'',
+			accessToken: Cookies.get("accessToken")
 		};
 	}
 
@@ -43,9 +49,55 @@ class Navbar extends Component {
 		} catch { }
 	};
 
+	componentDidMount() {
+		// console.log('Loading')
+		const token = Cookies.get("accessToken");
+		const user = JSON.parse(localStorage.getItem('user'));
+		// console.log(user)
+		if (token && user) {
+			this.setState({
+				user_id:user.user_id,
+				imageUrl:user.imageUrl
+			})
+		} else {
+		  Cookies.set('accessToken', null);
+		}
+	  }
+
 	componentDidUpdate() {
 		document.body.scrollTop = document.documentElement.scrollTop = 0;
 	}
+
+	responseGoogle = async (res) => {
+		console.log(res);
+		try {
+		  // Storing accessToken as a cookie
+		  Cookies.set('accessToken', res.uc.access_token)
+	
+		  // Post access token to get user_id
+		  let result = await axios.post('https://cerebro.pythonanywhere.com/account/googlelogin/', { 'Token': res.uc.access_token });
+		  console.log(result.data.user_id)
+		  const user = {
+			user_id: result.data.user_id,
+			firstName: res.profileObj.givenName,
+			lastName: res.profileObj.familyName,
+			email: res.profileObj.email,
+			mobile_number: '',
+			imageUrl: res.profileObj.imageUrl
+		  };
+	
+		  // updating values in localstorage
+		  localStorage.setItem('user', JSON.stringify(user));
+	
+		  // Updating values in state
+		  this.setState({
+			user_id:user.user_id,
+			imageUrl:user.imageUrl
+		  })
+		} catch (e) {
+		  console.log(e)
+		}
+	  }
 
 	render() {
 		return (
@@ -78,10 +130,30 @@ class Navbar extends Component {
 							<i className="fa fa-hourglass-half"></i>
 							<span className="elements">TIMELINE</span>
 						</NavLink>
+
 						<a className="list_element" onClick={this.hideDrawer} href="https://yashshah2820.pythonanywhere.com/media/pdfs/cerebro-brochure.pdf">
 							<i className="fa fa-info"></i>
 							<span className="elements">BROCHURE</span>
 						</a>
+						{
+							this.state.user_id ?
+							<NavLink className="list_element" onClick={this.hideDrawer} to="/user-dashboard">
+								<img src = {this.state.imageUrl} alt="profile_img" className="loginImg" />
+								<span className="elements">DASHBOARD</span>
+							</NavLink>
+							: 
+							<GoogleLogin
+								clientId="646722007534-bn7ekn1cnvl4am4umntss50eardh9bs5.apps.googleusercontent.com"
+								render={renderProps => (
+								<button onClick={renderProps.onClick} disabled={renderProps.disabled} className="loginBtn">
+									SIGNIN
+								</button>
+								)}
+								onSuccess={this.responseGoogle}
+								onFailure={this.responseGoogle}
+								cookiePolicy={'single_host_origin'}
+              				/>
+						}
 					</div>
 				</nav>
 			</div>

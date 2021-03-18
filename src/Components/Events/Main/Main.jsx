@@ -11,12 +11,17 @@ class Main extends Component {
   createTeamHandler = (id) => {
     const { user_id } = JSON.parse(localStorage.getItem('user'));
     console.log(user_id)
-    axios.post('https://cerebro.pythonanywhere.com/registration/team-register/', {
+    axios.post('https://cerebro.pythonanywhere.com/registration/team-register/',{
       account: user_id,
       event: id
-    }).then(res => {
-      console.log(res)
-      this.props.updateTeamCode('Registered ' + res.data["Team Code"] + '\n Go to dashboard')
+    },{
+        headers: {
+          'Authorization':'Token 32a66c85f4ba7c0a4cc629f30c55104cf3535088'
+        },
+    }
+    ).then(res => {
+      console.log(res.data.team_code)
+      this.props.updateTeamCode('Registered ' + res.data.team_code + '\n Go to dashboard')
     }).catch(e => {
       if (e.response.data.Error) {
         console.log(e.response.data.Error);
@@ -26,33 +31,6 @@ class Main extends Component {
       }
     })
   }
-
-
-  // fetchCall = async (user_id, id) => {
-  //   let res;
-  //   let json;
-
-  //   let obj = {
-  //     account:user_id,
-  //     event:id
-  //   }
-
-  //    let form = new FormData()
-  //    form.append('account', user_id)
-  //    form.append('event', id)
-
-  //   try{
-  //     res = await fetch('https://cerebro.pythonanywhere.com/registration/team-register/',{
-  //       method:'POST',
-  //       body:form
-  //     })
-  //     json= await res.json();
-  //     console.log(json)
-  //     }
-  //     catch(e){
-  //     console.log(e.Error)
-  //     }
-  // }
 
 
   onInputChange = (event) => {
@@ -65,6 +43,10 @@ class Main extends Component {
       account: user_id,
       event: id,
       team_code: this.state.inputCode
+    },{
+        headers: {
+          'Authorization':'Token 32a66c85f4ba7c0a4cc629f30c55104cf3535088'
+        },
     }).then(res => {
       this.props.updateTeamCode(res.data.Success)
     }).catch(e => {

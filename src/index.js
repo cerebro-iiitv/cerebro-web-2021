@@ -14,7 +14,8 @@ class App extends React.Component {
 
     this.state = {
       events: [],
-      contacts: []
+      contacts: [],
+      auth:false
     };
   }
 
