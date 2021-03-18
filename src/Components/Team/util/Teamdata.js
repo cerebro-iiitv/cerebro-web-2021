@@ -127,7 +127,7 @@ export const teamdata = {
     }
   ],
 
-  "Design & Video": [
+  "Design": [
     {
       "id": 3,
       "name": "Kavya Tripathi",
