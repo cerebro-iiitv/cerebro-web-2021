@@ -14,29 +14,31 @@ class UserDashboard extends React.Component {
   componentDidMount() {
     const user = JSON.parse(localStorage.getItem('user'));
     if (user) {
-      fetch(`https://cerebro.pythonanywhere.com/dashboard/${user.user_id}`)
-        .then(res => res.json())
-        .then(data => {
-          console.log(data)
-          this.setState({ details: data })
-        })
+      axios.get(`https://cerebro.pythonanywhere.com/dashboard/${user.user_id}`, {
+        headers: {
+          'Authorization': `Token ${user.access_token}`
+        }
+      }).then(res=> {
+        this.setState({ details: res })
+      })
     }
   }
 
   onDeleteEvent = (id) => {
-    axios.delete(`https://cerebro.pythonanywhere.com/registration/team-register/${id}`, {
+    const user = JSON.parse(localStorage.getItem('user'));
+
+    axios.delete(`https://cerebro.pythonanywhere.com/registration/team-register/${id}/`, {
         headers: {
-          'Authorization':'Token 32a66c85f4ba7c0a4cc629f30c55104cf3535088'
+          'Authorization':`Token ${user.access_token}`
         },
     }).then(res => {
-        console.log(res)
-        const temp = this.state.details.user_team.filter(event => {
+        const temp = this.state.details.data?.user_team.filter(event => {
           return event.id !== id
         })
         const obj = {
           ...this.state.details
         }
-        obj.user_team = temp
+        obj.data.user_team = temp
         this.setState({
           details: obj
         })
@@ -44,29 +46,9 @@ class UserDashboard extends React.Component {
   }
 
 
-
-
-  // fetchCall = async (user_id) => {
-  //   let json;
-  //   try{
-  //     const res = await fetch(`https://cerebro.pythonanywhere.com/dashboard/${user_id}`);
-  //     json= await res.json();
-  //     console.log(json)
-  //     }
-  //     catch(e){
-  //     console.log(e , json)
-  //     }
-  // }
-
-
-
   render() {
-    // const a =[1,2,3];
-    // const RegisteredEvents = a.map((e)=> <RegisteredEvent/>)
 
-    const RegisteredEvents = this.state.details.user_team?.length ? this.state.details.user_team.map((e) => { return <RegisteredEvent name={e.event_name} start={e.start_time} end={e.end_time} code={e.team_code} id={e.id} onDeleteEvent={this.onDeleteEvent} /> }) : null;
-
-
+    const RegisteredEvents = this.state.details.data?.user_team?.length ? this.state.details.data.user_team.map((e) => { return <RegisteredEvent name={e.event_name} start={e.start_time} end={e.end_time} code={e.team_code} id={e.id} onDeleteEvent={this.onDeleteEvent} /> }) : null;
 
     return (
       <div>
@@ -82,10 +64,10 @@ class UserDashboard extends React.Component {
 
           <div className="user-details">
             <div>
-              <img className="spaceship" src="media/spaceShip.svg" />
+              <img className="spaceship" src="media/spaceShip.svg" alt="" />
             </div>
             <div className="user-details__name">
-              <span>{this.state.details.first_name}</span>
+              <span>{this.state.details.data?.first_name}</span>
             </div>
             <div>
 

@@ -1,7 +1,6 @@
 import React from "react";
 import "./Sidelist.scss";
 const Sidelist = props => {
-  console.log(props.events)
   const eventList = props.events.map((event, curr_index) => {
     return (
       <li
@@ -10,7 +9,7 @@ const Sidelist = props => {
           curr_index === props.index ? "active" : ""
         }`}
         onClick={() => {
-          return props.updateEvent(curr_index, event.title, event.pdf);
+          return props.updateEvent(curr_index, event.title, event.rules_doc);
         }}
       >
         <span>{event.title}</span>

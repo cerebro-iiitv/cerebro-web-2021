@@ -9,20 +9,19 @@ class Main extends Component {
   }
 
   createTeamHandler = (id) => {
-    const { user_id, accessToken } = JSON.parse(localStorage.getItem('user'));
+    const { user_id, access_token } = JSON.parse(localStorage.getItem('user'));
     axios.post('https://cerebro.pythonanywhere.com/registration/team-register/', {
       account: user_id,
       event: id
     }, {
       headers: {
-        'Authorization': `Token 32a66c85f4ba7c0a4cc629f30c55104cf3535088`
+        'Authorization': `Token ${access_token}`
       },
     }
     ).then(res => {
       this.props.updateTeamCode('Registered ' + res.data.team_code + '\n Go to dashboard')
     }).catch(e => {
       if (e.response.data.Error) {
-        // console.log(e.response.data.Error);
         this.props.updateTeamCode(e.response.data.Error);
       } else {
         this.props.updateTeamCode('Some Error Occured!\n Contact Organizer');
@@ -36,15 +35,14 @@ class Main extends Component {
   }
 
   joinTeamHandler = (id) => {
-    const { user_id, accessToken } = JSON.parse(localStorage.getItem('user'));
-    // console.log(user_id)
+    const { user_id, access_token } = JSON.parse(localStorage.getItem('user'));
     axios.post('https://cerebro.pythonanywhere.com/registration/team-register/', {
       account: user_id,
       event: id,
       team_code: this.state.inputCode
     }, {
       headers: {
-        'Authorization': `Token 32a66c85f4ba7c0a4cc629f30c55104cf3535088`
+        'Authorization': `Token ${access_token}`
       },
     }).then(res => {
       this.props.updateTeamCode(res.data.Success)
@@ -55,7 +53,6 @@ class Main extends Component {
 
 
   render() {
-    // console.log(this.props)
 
     let registerButton = null
 
@@ -180,7 +177,7 @@ class Main extends Component {
                 }
 
               </table>
-              <a style={{ color: '#1bbcf1' }} href={this.props.pdf}>Rules and Regulations</a>
+              <a style={{ color: '#1bbcf1' }} target="_blank" rel="noopener noreferrer" href={this.props.pdf}>Rules and Regulations</a>
             </div>
           </div>
         </div>

@@ -8,7 +8,6 @@ import Circle from "./Circle/Circle";
 
 class Events extends Component {
   constructor(props) {
-    console.log(props)
     super(props);
 
     this.state = {
@@ -24,7 +23,7 @@ class Events extends Component {
       ],
       selectedEvent: "Tech Hunt",
       pdf:
-        "https://github.com/cerebro-iiitv/cerebro-web-2020/files/4276790/Tech.Hunt.pdf",
+        "https://docs.google.com/document/d/1XPZgU2EjfX9pmU6fTy1lLN62OxKtA5c-XuvYPSTjecM/edit?usp=sharing",
       teamCode: null
     };
   }
@@ -42,7 +41,6 @@ class Events extends Component {
 
   updateEvent = (index, event, pdf) => {
     this.removeteamCode()
-    console.log(index, event, pdf)
     this.setState({
       eventIndex: index,
       selectedEvent: event,
