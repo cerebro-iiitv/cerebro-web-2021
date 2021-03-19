@@ -13,7 +13,6 @@ class UserDashboard extends React.Component {
 
   componentDidMount() {
     const user = JSON.parse(localStorage.getItem('user'));
-    // console.log(user);
     if (user) {
       fetch(`https://cerebro.pythonanywhere.com/dashboard/${user.user_id}`)
         .then(res => res.json())
@@ -21,7 +20,6 @@ class UserDashboard extends React.Component {
           console.log(data)
           this.setState({ details: data })
         })
-      // this.fetchCall(user_id)
     }
   }
 

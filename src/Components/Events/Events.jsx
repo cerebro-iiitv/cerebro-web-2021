@@ -5,34 +5,44 @@ import Sidelist from "./Sidelist/Sidelist";
 import Main from "./Main/Main";
 import "./Events.scss";
 import Circle from "./Circle/Circle";
+
 class Events extends Component {
-
-  
-
-
-  componentDidMount() {
-    window.scroll(0, 0);
-  }
   constructor(props) {
     console.log(props)
     super(props);
 
     this.state = {
       eventIndex: 0,
+      events: [{
+        "contacts": [{
+          "id": 1,
+          "name": "",
+          "role": "",
+          "phone_number": ""
+        },]
+      }
+      ],
       selectedEvent: "Tech Hunt",
       pdf:
         "https://github.com/cerebro-iiitv/cerebro-web-2020/files/4276790/Tech.Hunt.pdf",
-      teamCode:null
+      teamCode: null
     };
   }
 
-  componentWillReceiveProps(){
-    console.log(this.props)
+  async componentWillMount() {
+    await this.eventGenerator();
+    document.getElementById("root-loader").style.display = "none";
+  }
+  async eventGenerator() {
+    const url = "https://cerebro.pythonanywhere.com/events/";
+    const res = await fetch(url);
+    const data = await res.json();
+    this.setState({ events: data });
   }
 
   updateEvent = (index, event, pdf) => {
     this.removeteamCode()
-    console.log(index,event,pdf)
+    console.log(index, event, pdf)
     this.setState({
       eventIndex: index,
       selectedEvent: event,
@@ -41,20 +51,18 @@ class Events extends Component {
   };
 
   updateteamCode = (code) => {
-    this.setState({ 
-      teamCode:code
+    this.setState({
+      teamCode: code
     })
   }
 
   removeteamCode = () => {
     this.setState({
-      teamCode:null
+      teamCode: null
     })
   }
 
   render() {
-    const { events } = this.props;
-    console.log(this.props)
     return (
       <div>
         <Header />
@@ -63,27 +71,25 @@ class Events extends Component {
             <Circle index={this.state.eventIndex} />
           </div>
           <div className="event__rightContainer">
-          <div>
-            <Main
-              events={events}
-              index={this.state.eventIndex}
-              title={this.state.selectedEvent}
-              contacts={events[this.state.eventIndex].contacts}
-              pdf={this.state.pdf}
-              teamCode = {this.state.teamCode}
-              updateTeamCode = {this.updateteamCode}
-            />
+            <div>
+              <Main
+                events={this.state.events}
+                index={this.state.eventIndex}
+                title={this.state.selectedEvent}
+                contacts={this.state.events[this.state.eventIndex].contacts}
+                pdf={this.state.pdf}
+                teamCode={this.state.teamCode}
+                updateTeamCode={this.updateteamCode}
+              />
+            </div>
+            <div>
+              <Sidelist
+                events={this.state.events}
+                updateEvent={this.updateEvent}
+                index={this.state.eventIndex}
+              />
+            </div>
           </div>
-          <div>
-            <Sidelist
-              events={events}
-              updateEvent={this.updateEvent}
-              index={this.state.eventIndex}
-            />
-          </div>
-          </div>
-          
-          
         </div>
       </div>
     );

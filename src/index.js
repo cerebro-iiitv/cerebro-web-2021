@@ -8,53 +8,30 @@ import "./fonts.css";
 import Team from "./Components/Team/Team";
 import Events from "./Components/Events/Events";
 import UserDashboard from "./Components/UserDashboard/UserDashboard";
+
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      events: [],
-      auth:false
+      auth: false
     };
   }
 
-  componentDidMount() {
-    this.eventGenerator()
+  async componentDidMount() {
     document.getElementById("root-loader").style.display = "none";
   }
-
-  eventGenerator() {
-    const url = "https://cerebro.pythonanywhere.com/events/";
-    fetch(url)
-      .then(res => {
-        return res.json()
-      })
-      .then(data => {
-        console.log(data)
-        this.setState({ events: data });
-      })
-      .catch(console.log);
-  }
-
 
   render() {
     return (
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route
-          path="/events"
-          render={props => (
-            <Events events={this.state.events} />
-          )}
-        />
+        <Route path="/events" component={Events} />
         <Route path="/team" component={Team} />
-        <Route
-          path="/timeline"
-          render={props => <Timeline events={this.state.events} />}
-        />
+        <Route path="/timeline" component={Timeline} />
         <Route
           path="/user-dashboard"
-          component={UserDashboard}/>
+          component={UserDashboard} />
       </Switch>
     );
   }
