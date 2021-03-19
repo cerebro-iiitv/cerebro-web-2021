@@ -8,6 +8,7 @@ import "./fonts.css";
 import Team from "./Components/Team/Team";
 import Events from "./Components/Events/Events";
 import UserDashboard from "./Components/UserDashboard/UserDashboard";
+import Faqs from "./Components/FAQs/Faqs";
 
 class App extends React.Component {
   constructor(props) {
@@ -31,7 +32,12 @@ class App extends React.Component {
         <Route path="/timeline" component={Timeline} />
         <Route
           path="/user-dashboard"
-          component={UserDashboard} />
+          component={UserDashboard}
+        />
+        <Route
+          path="/faqs"
+          component={Faqs}
+        />
       </Switch>
     );
   }
