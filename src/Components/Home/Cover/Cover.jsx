@@ -13,6 +13,18 @@ function Cover() {
     <div className="cover">
       <div className="cover__social-links">
         <div className="cover__social-links__container">
+        <a
+            className="cover__social-links__link"
+            href="https://discord.gg/YUEeUcBtbU"
+            target="_blank"
+          >
+            <img
+            src="media/discord-logo.svg"
+            alt="Cerebro helmet background"
+            width="28"
+            height="28"
+            />
+          </a>
           <a
             className="cover__social-links__link"
             href="https://www.twitter.com/cerebro_iiitv/"
