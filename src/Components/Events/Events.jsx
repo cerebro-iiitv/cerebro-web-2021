@@ -6,10 +6,15 @@ import Main from "./Main/Main";
 import "./Events.scss";
 import Circle from "./Circle/Circle";
 class Events extends Component {
+
+  
+
+
   componentDidMount() {
     window.scroll(0, 0);
   }
   constructor(props) {
+    console.log(props)
     super(props);
 
     this.state = {
@@ -20,6 +25,11 @@ class Events extends Component {
       teamCode:null
     };
   }
+
+  componentWillReceiveProps(){
+    console.log(this.props)
+  }
+
   updateEvent = (index, event, pdf) => {
     this.removeteamCode()
     console.log(index,event,pdf)
@@ -43,7 +53,8 @@ class Events extends Component {
   }
 
   render() {
-    const { events, contacts } = this.props;
+    const { events } = this.props;
+    console.log(this.props)
     return (
       <div>
         <Header />

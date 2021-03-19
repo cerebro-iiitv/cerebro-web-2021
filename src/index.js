@@ -18,18 +18,16 @@ class App extends React.Component {
     };
   }
 
-  async componentDidMount() {
-    await this.eventGenerator();
+  componentDidMount() {
+    this.eventGenerator()
     document.getElementById("root-loader").style.display = "none";
   }
 
-  async eventGenerator() {
+  eventGenerator() {
     const url = "https://cerebro.pythonanywhere.com/events/";
-    await fetch(url)
+    fetch(url)
       .then(res => {
-        if (res.status === 200) {
-          return res.json();
-        }
+        return res.json()
       })
       .then(data => {
         console.log(data)
