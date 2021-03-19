@@ -9,12 +9,40 @@ import Header from "../Header/Header";
 import "./Timeline.scss";
 
 class Timeline extends React.Component {
-  componentDidMount() {
-    window.scroll(0, 0);
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      eventIndex: 0,
+      events: [{
+        "contacts": [{
+          "id": 1,
+          "name": "",
+          "role": "",
+          "phone_number": ""
+        },]
+      }
+      ],
+      selectedEvent: "Tech Hunt",
+      pdf:
+        "https://github.com/cerebro-iiitv/cerebro-web-2020/files/4276790/Tech.Hunt.pdf",
+      teamCode: null
+    };
+  }
+
+  componentWillMount() {
+    this.eventGenerator();
+    document.getElementById("root-loader").style.display = "none";
+  }
+  async eventGenerator() {
+    const url = "https://cerebro.pythonanywhere.com/events/";
+    const res = await fetch(url);
+    const data = await res.json();
+    this.setState({ events: data });
   }
 
   render() {
-    const timeline = [...this.props.events].sort((eventA, eventB) => {
+    const timeline = [...this.state.events].sort((eventA, eventB) => {
       let [eventADate, eventATime, eventAPeriod] = eventA.start_time.split(' ')
       let [eventBDate, eventBTime, eventBPeriod] = eventB.start_time.split(' ')
 
