@@ -1,0 +1,35 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+	<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+	<url>
+		<loc>
+			https://cerebro.iiitvadodara.ac.in
+		</loc>
+		<lastmod>
+			2021-03-18T13:34:36+00:00
+		</lastmod>
+	</url>
+	<url>
+		<loc>
+			https://cerebro.iiitvadodara.ac.in/events
+		</loc>
+		<lastmod>
+			2021-03-18T13:34:36+00:00
+		</lastmod>
+	</url>
+	<url>
+		<loc>
+			https://cerebro.iiitvadodara.ac.in/team
+		</loc>
+		<lastmod>
+			2021-03-18T13:34:36+00:00
+		</lastmod>
+	</url>
+	<url>
+		<loc>
+			https://cerebro.iiitvadodara.ac.in/timeline
+		</loc>
+		<lastmod>
+			2021-03-18T13:34:36+00:00
+		</lastmod>
+	</url>
+</urlset>

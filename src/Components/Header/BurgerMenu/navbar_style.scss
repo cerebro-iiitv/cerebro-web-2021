@@ -101,3 +101,28 @@
     margin-left: 25px;
     margin-top: -30px;
 }
+
+.loginBtn{
+    font-family: "Gilroy-Light", Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
+    font-size: 16px;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 1000;
+    text-transform: uppercase;
+    box-shadow: 0 3px 6px 0 rgba(105, 224, 216, 0.16);
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid #1bbcf1;
+    transition: all 0.3s;
+    color: white;
+}
+
+.loginImg{
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    margin: 10px;
+}

@@ -14,7 +14,8 @@ class App extends React.Component {
 
     this.state = {
       events: [],
-      contacts: []
+      contacts: [],
+      auth:false
     };
   }
 
@@ -25,7 +26,7 @@ class App extends React.Component {
   }
 
   async eventGenerator() {
-    const url = "https://yashshah2820.pythonanywhere.com/events/events/";
+    const url = "https://cerebro.pythonanywhere.com/events/";
     await fetch(url)
       .then(res => {
         if (res.status === 200) {
@@ -33,6 +34,7 @@ class App extends React.Component {
         }
       })
       .then(data => {
+        console.log(data)
         this.setState({ events: data });
       })
       .catch(console.log);

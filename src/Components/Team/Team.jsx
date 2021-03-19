@@ -12,6 +12,16 @@ export class Team extends Component {
   }
 
   updateSelectedTeam = team => this.setState({selectedTeam: team})
+  // async componentWillMount() {
+  //   let res = await fetch('https://cerebro.pythonanywhere.com/teams/?team=core');
+  //   res = await res.json();
+  //   console.log(res);
+  //   this.setState({ selectedTeam: res });
+  // }
+
+  // componentWillReceiveProps() {
+
+  // }
 
   render() {
     return (
