@@ -57,7 +57,7 @@ class Events extends Component {
               events={events}
               index={this.state.eventIndex}
               title={this.state.selectedEvent}
-              contacts={contacts}
+              contacts={events[this.state.eventIndex].contacts}
               pdf={this.state.pdf}
               teamCode = {this.state.teamCode}
               updateTeamCode = {this.updateteamCode}

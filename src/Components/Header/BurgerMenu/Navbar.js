@@ -17,7 +17,6 @@ class Navbar extends Component {
 			accessToken: Cookies.get("accessToken")
 		};
 	}
-
 	onOpenModal = () => {
 		this.setState({ open: true });
 	};
