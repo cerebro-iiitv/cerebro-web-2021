@@ -29,7 +29,7 @@ class App extends React.Component {
         <Route exact path="/" component={Home} />
         <Route path="/events" component={Events} />
         <Route path="/team" component={Team} />
-        <Route path="/timeline" component={Timeline} />
+        <Route path="/timeline" component={Timeline}/>
         <Route
           path="/user-dashboard"
           component={UserDashboard}

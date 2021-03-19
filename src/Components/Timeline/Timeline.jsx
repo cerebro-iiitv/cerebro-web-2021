@@ -65,7 +65,7 @@ class Timeline extends React.Component {
           >
             {event.start_time}
             <Link className="eventLink">
-              <h3 className="vertical-timeline-element-title">{event.event}</h3>
+              <h3 className="vertical-timeline-element-title">{event.title}</h3>
               <p className="vertical-timeline-element-description">{event.description}</p>
             </Link>
           </VerticalTimelineElement>

@@ -92,9 +92,9 @@
   }
 
   &__login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
     border: 1px solid $color-style;
     background-color: $color-background;
     border-radius: 50%;
@@ -118,8 +118,10 @@
   }
 
   &__user {
-    height: 1.4em !important;
-    width: 1.4em !important;
+    // box-sizing: border-box;
+    height:77% !important;
+    width:77% !important;
+    padding:  7px;
   }
 
   @media screen and (max-width: $mobile-view) {
@@ -164,4 +166,41 @@
 .styles_modal__gNwvD,
 .styles_overlay__CLSq- {
   padding: 0;
+}
+
+
+.modal {
+  display: none;
+  position: absolute;
+  transform: translate(-80%, 75px);
+  background-color: #fff;
+  color: #000;
+  border-radius: 4px;
+  z-index: 2;
+  & > * > * {
+    padding: 8px 16px;
+    color: #000;
+    &:first-child {
+      border-bottom: 1px solid #000;
+    }
+  }
+  box-shadow: 0 11px 15px 0 rgba(0, 0, 0, 0.2), 0 9px 46px 0 rgba(0, 0, 0, 0.12),
+    0 24px 38px 0 rgba(0, 0, 0, 0.14);
+}
+
+.backdrop {
+  top: 0;
+  left: 0;
+  display: none;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+.modal_visible {
+  display: block;
+  @media screen and (max-width: 1000px) {
+    display: none !important;
+  }
 }

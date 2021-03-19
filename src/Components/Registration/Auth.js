@@ -24,15 +24,12 @@ class Auth extends Component {
       window.gapi.auth2.init({
         client_id:'158321300884-hubsg7qr9frflo7ah3kkkurlvelooulj.apps.googleusercontent.com'
       })
-      console.log('Api inited')
       const params = {
         onSuccess: (result) => {
-          console.log(result)
           localStorage.setItem('token', result.uc.access_token)
           localStorage.setItem('imgURL', result.Hs.jI)
           axios.post('https://cerebro.pythonanywhere.com/account/googlelogin/', {'Token':result.uc.access_token})
           .then(res=>{
-            console.log(res)
             localStorage.setItem('user_id', res.data.user_id)
           })
         }
@@ -42,11 +39,9 @@ class Auth extends Component {
   }
 
   componentDidMount(){
-    console.log('Loading')
     let token = localStorage.getItem('token')
     let imgURL  = localStorage.getItem('imgURL')
-    console.log(imgURL)
-    console.log(token)
+    
     if(token){
       this.setState({
         Auth:true,
