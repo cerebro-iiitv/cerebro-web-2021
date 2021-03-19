@@ -14,14 +14,12 @@ class App extends React.Component {
 
     this.state = {
       events: [],
-      contacts: [],
       auth:false
     };
   }
 
   async componentDidMount() {
     await this.eventGenerator();
-    await this.contactGenerator();
     document.getElementById("root-loader").style.display = "none";
   }
 
@@ -40,19 +38,6 @@ class App extends React.Component {
       .catch(console.log);
   }
 
-  async contactGenerator() {
-    const url = "https://yashshah2820.pythonanywhere.com/events/contact/";
-    await fetch(url)
-      .then(res => {
-        if (res.status === 200) {
-          return res.json();
-        }
-      })
-      .then(data => {
-        this.setState({ contacts: data });
-      })
-      .catch(console.log);
-  }
 
   render() {
     return (
@@ -61,7 +46,7 @@ class App extends React.Component {
         <Route
           path="/events"
           render={props => (
-            <Events events={this.state.events} contacts={this.state.contacts} />
+            <Events events={this.state.events} />
           )}
         />
         <Route path="/team" component={Team} />
