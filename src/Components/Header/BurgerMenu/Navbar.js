@@ -53,7 +53,6 @@ class Navbar extends Component {
 		// console.log('Loading')
 		const token = Cookies.get("accessToken");
 		const user = JSON.parse(localStorage.getItem('user'));
-		// console.log(user)
 		if (token && user) {
 			this.setState({
 				user_id:user.user_id,
@@ -143,7 +142,7 @@ class Navbar extends Component {
 							</NavLink>
 							: 
 							<GoogleLogin
-								clientId="646722007534-bn7ekn1cnvl4am4umntss50eardh9bs5.apps.googleusercontent.com"
+								clientId="158321300884-hubsg7qr9frflo7ah3kkkurlvelooulj.apps.googleusercontent.com"
 								render={renderProps => (
 								<button onClick={renderProps.onClick} disabled={renderProps.disabled} className="loginBtn">
 									SIGNIN
