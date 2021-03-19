@@ -1,2 +1,4 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
+Disallow:
+
+Sitemap: https://cerebro.iiitvadodara.ac.in/sitemap.xml
