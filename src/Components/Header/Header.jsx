@@ -85,7 +85,7 @@ class Header extends Component {
               </div>
               :
               <GoogleLogin
-                clientId="646722007534-bn7ekn1cnvl4am4umntss50eardh9bs5.apps.googleusercontent.com"
+                clientId="158321300884-hubsg7qr9frflo7ah3kkkurlvelooulj.apps.googleusercontent.com"
                 render={renderProps => (
                   <button onClick={renderProps.onClick} disabled={renderProps.disabled} className="navbar__login">
                     <img className="g_img" src="media/google.png" alt="" />

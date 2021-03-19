@@ -1,0 +1,130 @@
+@import "../../../fonts.css";
+
+.details{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 219px;
+    column-gap: 51.3px;
+}
+
+.details__image__UFO{
+    width: 538px;
+    height: 449px;
+    margin-top: 57px;
+}
+
+.details__body{
+    display: flex;
+    flex-direction: row;
+}
+
+.details__body__figures{
+    display: flex;
+    flex-direction: column;
+    font-family: Gilroy-ExtraBold;
+    font-size: 52px;
+    align-items: flex-end;
+}
+
+.details__body__figures>div{
+    padding: 12px 8px;
+    border-radius: 10px;
+    border: solid 1px #00b1f4;
+    width: fit-content;
+    margin-bottom: 29px;
+}
+
+.details__body__text{
+    display: flex;
+    flex-direction: column;
+    font-family: Gilroy-ExtraBold;
+    font-size: 36px;
+    color: #00b1f4;
+    line-height: 88px;
+    // align-items: flex-end;
+}
+
+.details__body__text>div{
+    margin-bottom: 29px;
+    margin-left: 25px;
+}
+
+@media screen and (max-width:1663px) {
+
+    .details__image__UFO{
+        width: 403.5px;
+        height: 336.75px;
+        margin-top: 42.75px;
+    }
+      
+    .details__body__figures{
+        font-size: 39px;
+    }
+    
+    .details__body__text{
+        font-size: 27px;
+        line-height: 74px;
+    }
+
+}
+
+@media screen and (max-width:1301px) {
+
+    .details__image__UFO{
+        width: 295.98px;
+        height: 246.95px;
+        margin-top: 31.35px;
+    }
+      
+    .details__body__figures{
+        font-size: 28.6px;
+    }
+    
+    .details__body__text{
+        font-size: 19.8px;
+        line-height: 61.33px;
+    }
+
+}
+
+@media screen and (max-width:1001px) {
+    .details{
+        flex-direction: column-reverse;
+        align-items: center;
+        margin-top: 68px;
+    }
+
+    .details__image__UFO{
+        width: 403.5px;
+        height: 336.75px;
+    }
+      
+    .details__body__figures{
+        font-size: 39px;
+    }
+    
+    .details__body__text{
+        font-size: 27px;
+        line-height: 74px;
+    }
+
+}
+
+@media screen and (max-width:590px) {
+    .details__image__UFO{
+        width: 260px;
+        height: 215.8px;
+    }
+      
+    .details__body__figures{
+        font-size: 24px;
+    }
+    
+    .details__body__text{
+        font-size: 16px;
+        line-height: 55.33px;
+    }
+
+}
+

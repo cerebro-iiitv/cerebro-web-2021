@@ -15,70 +15,33 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      events: [],
-      contacts: [],
-      auth:false
+      auth: false
     };
   }
 
   async componentDidMount() {
-    await this.eventGenerator();
-    await this.contactGenerator();
     document.getElementById("root-loader").style.display = "none";
-  }
-
-  async eventGenerator() {
-    const url = "https://cerebro.pythonanywhere.com/events/";
-    await fetch(url)
-      .then(res => {
-        if (res.status === 200) {
-          return res.json();
-        }
-      })
-      .then(data => {
-        console.log(data)
-        this.setState({ events: data });
-      })
-      .catch(console.log);
-  }
-
-  async contactGenerator() {
-    const url = "https://yashshah2820.pythonanywhere.com/events/contact/";
-    await fetch(url)
-      .then(res => {
-        if (res.status === 200) {
-          return res.json();
-        }
-      })
-      .then(data => {
-        this.setState({ contacts: data });
-      })
-      .catch(console.log);
   }
 
   render() {
     return (
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route
-          path="/events"
-          render={props => (
-            <Events events={this.state.events} contacts={this.state.contacts} />
-          )}
-        />
+        <Route path="/events" component={Events} />
         <Route path="/team" component={Team} />
-        <Route
-          path="/timeline"
-          render={props => <Timeline events={this.state.events} />}
-        />
+        <Route path="/timeline" component={Timeline} />
         <Route
           path="/user-dashboard"
+<<<<<<< HEAD
           component={UserDashboard}
         />
         <Route
           path="/faqs"
           component={Faqs}
         />
+=======
+          component={UserDashboard} />
+>>>>>>> c38e69bce1f86e8bcfdf84fd54b5af9cfd0c7248
       </Switch>
     );
   }
