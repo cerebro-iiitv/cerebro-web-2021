@@ -32,16 +32,12 @@ class App extends React.Component {
         <Route path="/timeline" component={Timeline} />
         <Route
           path="/user-dashboard"
-<<<<<<< HEAD
           component={UserDashboard}
         />
         <Route
           path="/faqs"
           component={Faqs}
         />
-=======
-          component={UserDashboard} />
->>>>>>> c38e69bce1f86e8bcfdf84fd54b5af9cfd0c7248
       </Switch>
     );
   }
