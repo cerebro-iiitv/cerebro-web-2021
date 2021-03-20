@@ -119,14 +119,24 @@
 
   &__user {
     // box-sizing: border-box;
-    height:77% !important;
-    width:77% !important;
-    padding:  7px;
+    height: 77% !important;
+    width: 77% !important;
+    padding: 7px;
   }
 
   @media screen and (max-width: $mobile-view) {
     padding: 15px 15px 0;
     padding-bottom: 10px;
+  }
+  &__user-desktop {
+    @media screen and (max-width: 1000px) {
+      display: none;
+    }
+  }
+  &__user-mobile {
+    @media screen and (min-width: 1000px) {
+      display: none;
+    }
   }
 }
 
@@ -168,7 +178,6 @@
   padding: 0;
 }
 
-
 .modal {
   display: none;
   position: absolute;
@@ -200,7 +209,4 @@
 
 .modal_visible {
   display: block;
-  @media screen and (max-width: 1000px) {
-    display: none !important;
-  }
 }

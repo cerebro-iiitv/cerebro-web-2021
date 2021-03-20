@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import "./Header.scss";
-import Navbar from "./BurgerMenu/Navbar";
+import Navbar from "./BurgerMenu/Navbar.jsx";
 import "font-awesome/css/font-awesome.min.css";
 // import Modal from "react-responsive-modal";
 import { GoogleLogin } from "react-google-login";
 import axios from "axios";
 import Cookies from "js-cookie";
+import Logout from "./Logout";
 
 class Header extends Component {
   state = {
@@ -28,15 +29,6 @@ class Header extends Component {
       Cookies.set("accessToken", null);
     }
   }
-
-  handleModal = () => {
-    const modal = document?.getElementById("modal");
-    const backdrop = document?.getElementById("backdrop");
-
-    modal.classList.toggle("modal_visible");
-    backdrop.classList.toggle("modal_visible");
-
-  };
 
   responseGoogle = async (res) => {
     let token;
@@ -106,47 +98,7 @@ class Header extends Component {
             </a>
           </ul>
           {this.state.user_id ? (
-            <div>
-              <div id="modal" className="modal">
-                <NavLink to="/user-dashboard">
-                  <p>Dash Board</p>
-                </NavLink>
-                <div
-                  onClick={async () => {
-                    const res = await axios(
-                      "https://cerebro.pythonanywhere.com/account/logout/",
-                      {
-                        headers: {
-                          Authorization: `token ${
-                            JSON.parse(localStorage.getItem("user"))
-                              .access_token
-                          }`,
-                        },
-                      }
-                    );
-                    if (res.status === 200) {
-                      Cookies.remove("accessToken");
-                      localStorage.removeItem("user");
-                      window.location = '/'
-                    }
-                  }}
-                >
-                  <p style={{cursor:'pointer'}}>Log Out</p>
-                </div>
-              </div>
-              <div
-                id="backdrop"
-                className="backdrop"
-                onClick={this.handleModal}
-              ></div>
-              <div className="navbar__login" onClick={this.handleModal}>
-                <img
-                  className="navbar__user"
-                  src={this.state.imageUrl}
-                  alt="user"
-                />
-              </div>
-            </div>
+            <Logout imageUrl={this.state.imageUrl} />
           ) : (
             <GoogleLogin
               clientId="158321300884-hubsg7qr9frflo7ah3kkkurlvelooulj.apps.googleusercontent.com"
