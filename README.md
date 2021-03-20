@@ -32,7 +32,7 @@ yarn
 #### Start the app
 
 ```sh
-yarn start
+yarn run start
 ```
 
 ### Authors ✍️
