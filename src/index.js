@@ -15,7 +15,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      auth: false
+      auth: false,
     };
   }
 
@@ -29,15 +29,9 @@ class App extends React.Component {
         <Route exact path="/" component={Home} />
         <Route path="/events" component={Events} />
         <Route path="/team" component={Team} />
-        <Route path="/timeline" component={Timeline}/>
-        <Route
-          path="/user-dashboard"
-          component={UserDashboard}
-        />
-        <Route
-          path="/faqs"
-          component={Faqs}
-        />
+        <Route path="/timeline" component={Timeline} />
+        <Route path="/user-dashboard" component={UserDashboard} />
+        <Route path="/faqs" component={Faqs} />
       </Switch>
     );
   }
