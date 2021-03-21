@@ -168,13 +168,11 @@ class Main extends Component {
         <div className="main__container">
           <h1 className="main__container__title">{this.props.title}</h1>
           <div
-            className="main__container__content"
-            style={{
-              height:
-                this.props.events[this.props.index]?.team_size > 1
-                  ? "calc(100vh - 430px)"
-                  : "calc(100vh - 400px)",
-            }}
+            className={
+              this.props.events[this.props.index]?.team_size > 1
+                ? "main__container__content withJoin"
+                : "main__container__content withOutJoin"
+            }
           >
             <div className="main__container__content__left">{eventList}</div>
             <span className="main__container__content__vl"></span>
