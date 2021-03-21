@@ -51,8 +51,8 @@ class Timeline extends React.Component {
       let [hourB, minB] = eventBTime.split(":")
       if (eventAPeriod == "PM") hourA=parseInt(hourA)+12
       if (eventBPeriod == "PM") hourA=parseInt(hourB)+12
-      let dateA = new Date(parseInt(yearA), parseInt(monthA), parseInt(dayA), hourA, parseInt(minA), 0, 0)
-      let dateB = new Date(parseInt(yearB), parseInt(monthB), parseInt(dayB), hourB, parseInt(minB), 0, 0)
+      let dateA = new Date(parseInt(yearA), parseInt(monthA)-1, parseInt(dayA), hourA, parseInt(minA), 0, 0)
+      let dateB = new Date(parseInt(yearB), parseInt(monthB)-1, parseInt(dayB), hourB, parseInt(minB), 0, 0)
       if (dateA>dateB)
         return 1
       else
