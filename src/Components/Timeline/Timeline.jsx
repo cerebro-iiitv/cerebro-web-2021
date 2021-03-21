@@ -53,8 +53,6 @@ class Timeline extends React.Component {
       if (eventBPeriod == "PM") hourA=parseInt(hourB)+12
       let dateA = new Date(parseInt(yearA), parseInt(monthA), parseInt(dayA), hourA, parseInt(minA), 0, 0)
       let dateB = new Date(parseInt(yearB), parseInt(monthB), parseInt(dayB), hourB, parseInt(minB), 0, 0)
-      console.log(dateA)
-      console.log(dateB)
       if (dateA>dateB)
         return 1
       else
