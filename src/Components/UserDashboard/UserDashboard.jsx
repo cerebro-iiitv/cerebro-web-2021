@@ -32,7 +32,6 @@ class UserDashboard extends React.Component {
   }
   onNumberSubmit = () => {
     const user = JSON.parse(localStorage.getItem("user"));
-    console.log(typeof(this.state.number))
     if (this.state.number.length === 10) {
       axios
         .patch(
@@ -45,7 +44,6 @@ class UserDashboard extends React.Component {
           }
         )
         .then((res) => {
-          console.log(res)
           this.setState({
             responseMsg:'Number updated successfully!'
           })
