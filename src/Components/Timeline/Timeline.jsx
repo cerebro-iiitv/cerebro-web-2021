@@ -45,10 +45,18 @@ class Timeline extends React.Component {
     const timeline = [...this.state.events].sort((eventA, eventB) => {
       let [eventADate, eventATime, eventAPeriod] = eventA.start_time.split(' ')
       let [eventBDate, eventBTime, eventBPeriod] = eventB.start_time.split(' ')
-
-      if (eventATime.length === 4) eventATime = "0".concat(eventATime)
-      if (eventBTime.length === 4) eventBTime = "0".concat(eventBTime)
-      return eventADate.localeCompare(eventBDate) || eventAPeriod.localeCompare(eventBPeriod) || eventATime.localeCompare(eventBTime)
+      let [dayA, monthA, yearA] = eventADate.split('-')
+      let [dayB, monthB, yearB] = eventBDate.split('-')
+      let [hourA, minA] = eventATime.split(":")
+      let [hourB, minB] = eventBTime.split(":")
+      if (eventAperiod == "PM") hourA=parseInt(hourA)+12
+      if (eventBperiod == "PM") hourA=parseInt(hourB)+12
+      let dateA = Date(parseInt(yearA), parseInt(monthA)-1, parseInt(dayA), hourA, parseInt(minA), 0, 0)
+      let dateB = Date(parseInt(yearB), parseInt(monthB)-1, parseInt(dayB), hourB, parseInt(minB), 0, 0)
+      if (dateA>dateB)
+        return 1
+      else
+        return -1
     }).map((event, index) => {
       if (index % 2 === 0) {
         var side = "left";
