@@ -45,8 +45,8 @@ class UserDashboard extends React.Component {
         )
         .then((res) => {
           this.setState({
-            responseMsg:'Number updated successfully!'
-          })
+            responseMsg: "Number updated successfully!",
+          });
         });
     } else {
       this.setState({
@@ -109,10 +109,6 @@ class UserDashboard extends React.Component {
               <span className="user-events__header">Registered Events</span>
               <div className="user-events__registered">{RegisteredEvents}</div>
             </div>
-            {/* <div className="user-hr-container">
-                  <hr className="user-hr"/>
-                </div> */}
-
             <div className="user-details">
               <div>
                 <img className="spaceship" src="media/spaceShip.svg" alt="" />
@@ -148,7 +144,7 @@ class UserDashboard extends React.Component {
                 >
                   Save
                 </button>
-                <p style={{marginTop:'15px'}}>{this.state.responseMsg}</p>
+                <p style={{ marginTop: "15px" }}>{this.state.responseMsg}</p>
               </div>
             </div>
           </div>

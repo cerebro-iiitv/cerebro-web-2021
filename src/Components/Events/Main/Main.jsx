@@ -1,11 +1,23 @@
 import React, { Component } from "react";
 import "./Main.scss";
 import axios from "axios";
+import { GoogleLogin } from "react-google-login";
+import Cookies from "js-cookie";
 
 class Main extends Component {
   state = {
+    auth: false,
     teamEvent: false,
   };
+
+  componentDidMount() {
+    const user = localStorage.getItem("user");
+    if (user) {
+      this.setState({
+        auth: true,
+      });
+    }
+  }
 
   createTeamHandler = (id) => {
     const { user_id, access_token } = JSON.parse(localStorage.getItem("user"));
@@ -39,6 +51,42 @@ class Main extends Component {
           );
         }
       });
+  };
+
+  responseGoogle = async (res) => {
+    let token;
+    try {
+      // Post access token to get user_id
+      if (!!res?.uc) {
+        token = res.uc.access_token;
+      } else {
+        token = res.tc.access_token;
+      }
+      let result = await axios.post(
+        "https://cerebro.pythonanywhere.com/account/googlelogin/",
+        { Token: token }
+      );
+
+      Cookies.set("accessToken", result.data.access_token);
+      const user = {
+        user_id: result.data.user_id,
+        firstName: res.profileObj.givenName,
+        lastName: res.profileObj.familyName,
+        email: res.profileObj.email,
+        mobile_number: "",
+        imageUrl: res.profileObj.imageUrl,
+        access_token: result.data.access_token,
+      };
+
+      // updating values in localstorage
+      localStorage.setItem("user", JSON.stringify(user));
+      window.location = "/";
+
+      // Updating values in state
+      this.setState({ auth: true });
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   onInputChange = (event) => {
@@ -75,6 +123,25 @@ class Main extends Component {
 
   render() {
     let registerButton = null;
+    let LoginBtn = <div className="main__container__content__right__reg">
+   
+     <GoogleLogin
+          clientId="158321300884-hubsg7qr9frflo7ah3kkkurlvelooulj.apps.googleusercontent.com"
+          render={(renderProps) => (
+            <button
+              onClick={renderProps.onClick}
+              disabled={renderProps.disabled}
+            className="main__container__button"
+            style={{color:'white'}}
+            >
+              Login
+            </button>
+          )}
+          onSuccess={this.responseGoogle}
+          onFailure={this.responseGoogle}
+          cookiePolicy={"single_host_origin"}
+        />
+  </div>
 
     const coConvenor = this.props.contacts.filter((contact) => {
       if (contact.role.includes("Co-Convenor")) {
@@ -240,7 +307,8 @@ class Main extends Component {
             </div>
           </div>
         </div>
-        {registerButton}
+        {this.state.auth ? registerButton : LoginBtn}
+        {/* {registerButton} */}
         <p className="confirmationMsg">{this.props.teamCode}</p>
       </div>
     );
