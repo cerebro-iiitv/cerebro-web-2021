@@ -77,7 +77,7 @@ class Timeline extends React.Component {
         <Header></Header>
         <div>
           <a
-            href="https://github.com/cerebro-iiitv/cerebro-backend-2020/files/4301776/timeline.pdf"
+            href="https://cerebro.pythonanywhere.com/media/docs/Cerebro_Timeline.pdf"
             className="timelinePdf"
           >
             <img

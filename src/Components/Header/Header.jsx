@@ -30,6 +30,14 @@ class Header extends Component {
     }
   }
 
+  handleModal = () => {
+    const modal = document?.getElementById("modal");
+    const backdrop = document?.getElementById("backdrop");
+
+    modal.classList.toggle("modal_visible");
+    backdrop.classList.toggle("modal_visible");
+  };
+
   responseGoogle = async (res) => {
     let token;
     try {
@@ -91,14 +99,54 @@ class Header extends Component {
             </NavLink>
             <a
               className="navbar__links__li"
-              href="https://yashshah2820.pythonanywhere.com/media/pdfs/cerebro-brochure.pdf"
+              href="https://cerebro.pythonanywhere.com/media/docs/cerebro-brochure.pdf"
             >
               {" "}
               Brochure{" "}
             </a>
           </ul>
           {this.state.user_id ? (
-            <Logout imageUrl={this.state.imageUrl} />
+            <div>
+              <div id="modal" className="modal">
+                <NavLink to="/user-dashboard">
+                  <p>Dash Board</p>
+                </NavLink>
+                <div
+                  onClick={async () => {
+                    const res = await axios(
+                      "https://cerebro.pythonanywhere.com/account/logout/",
+                      {
+                        headers: {
+                          Authorization: `token ${
+                            JSON.parse(localStorage.getItem("user"))
+                              .access_token
+                          }`,
+                        },
+                      }
+                    );
+                    if (res.status === 200) {
+                      Cookies.remove("accessToken");
+                      localStorage.removeItem("user");
+                      window.location = "/";
+                    }
+                  }}
+                >
+                  <p style={{ cursor: "pointer" }}>Log Out</p>
+                </div>
+              </div>
+              <div
+                id="backdrop"
+                className="backdrop"
+                onClick={this.handleModal}
+              ></div>
+              <div className="navbar__login" onClick={this.handleModal}>
+                <img
+                  className="navbar__user"
+                  src={this.state.imageUrl}
+                  alt="user"
+                />
+              </div>
+            </div>
           ) : (
             <GoogleLogin
               clientId="158321300884-hubsg7qr9frflo7ah3kkkurlvelooulj.apps.googleusercontent.com"
