@@ -5,6 +5,7 @@ import "font-awesome/css/font-awesome.min.css";
 import { GoogleLogin } from "react-google-login";
 import axios from "axios";
 import Cookies from "js-cookie";
+import { handleLogout } from "../Logout/common";
 
 class Navbar extends Component {
   constructor(props) {
@@ -165,18 +166,23 @@ class Navbar extends Component {
               <span className="elements">BROCHURE</span>
             </a>
             {this.state.user_id ? (
-              <NavLink
-                className="list_element"
-                onClick={this.hideDrawer}
-                to="/user-dashboard"
-              >
-                <img
-                  src={this.state.imageUrl}
-                  alt="profile_img"
-                  className="loginImg"
-                />
-                <span className="elements">DASHBOARD</span>
-              </NavLink>
+              <React.Fragment>
+                <NavLink
+                  className="list_element"
+                  onClick={this.hideDrawer}
+                  to="/user-dashboard"
+                >
+                  <img
+                    src={this.state.imageUrl}
+                    alt="profile_img"
+                    className="loginImg"
+                  />
+                  <span className="elements">DASHBOARD</span>
+                </NavLink>
+                <p className="elements" onClick={handleLogout}>
+                  Log Out{" "}
+                </p>
+              </React.Fragment>
             ) : (
               <GoogleLogin
                 clientId="158321300884-hubsg7qr9frflo7ah3kkkurlvelooulj.apps.googleusercontent.com"
