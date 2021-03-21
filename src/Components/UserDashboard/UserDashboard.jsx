@@ -8,6 +8,7 @@ import axios from "axios";
 class UserDashboard extends React.Component {
     state = {
         details: {},
+        number: "",
     };
 
     componentDidMount() {
@@ -23,17 +24,33 @@ class UserDashboard extends React.Component {
                     }
                 )
                 .then((res) => {
-                    this.setState({ details: res });
+                    this.setState({
+                        details: res,
+                        number: res.data?.mobile_number,
+                    });
                 });
         }
     }
-
+    onNumberSubmit = () => {
+        const user = JSON.parse(localStorage.getItem("user"));
+        axios
+            .patch(
+                `https://cerebro.pythonanywhere.com/dashboard/${user.user_id}/`,
+                { mobile_number: this.state.number },
+                {
+                    headers: {
+                        Authorization: `Token ${user.access_token}`,
+                    },
+                }
+            )
+            .then((res) => {});
+    };
     onDeleteEvent = (id) => {
         const user = JSON.parse(localStorage.getItem("user"));
 
         axios
             .delete(
-                `https://cerebro.pythonanywhere.com/registration/team-register/${id}/`,
+                `https://cerebro.pythonanywhere.com/registration/team-register/${id}`,
                 {
                     headers: {
                         Authorization: `Token ${user.access_token}`,
@@ -52,6 +69,7 @@ class UserDashboard extends React.Component {
                 obj.data.user_team = temp;
                 this.setState({
                     details: obj,
+                    number: this.state.details.data?.mobile_number,
                 });
             });
     };
@@ -71,7 +89,6 @@ class UserDashboard extends React.Component {
                   );
               })
             : null;
-
         return (
             <div>
                 <Header />
@@ -100,16 +117,25 @@ class UserDashboard extends React.Component {
                             <span>{this.state.details.data?.first_name}</span>
                         </div>
                         <div>
-                            {this.state.details.mobile_number && (
-                                <div>
-                                    <div className="user-details__number">
-                                        <span>
-                                            {this.state.details.mobile_number}
-                                        </span>
-                                    </div>
-                                    <div className="user-details__circle"></div>
-                                </div>
-                            )}
+                            <input
+                                type="tel"
+                                value={this.state.number}
+                                className="user-details__number"
+                                onChange={(e) =>
+                                    this.setState({
+                                        ...this.state,
+                                        number: e.target.value,
+                                    })
+                                }
+                            >
+                                {/* <span>{this.state.details.mobile_number}</span> */}
+                            </input>
+                            <button
+                                className="userSubmit"
+                                onClick={this.onNumberSubmit}
+                            >
+                                Save
+                            </button>
                         </div>
                     </div>
                 </div>
