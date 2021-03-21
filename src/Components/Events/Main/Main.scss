@@ -350,3 +350,13 @@
     flex-flow: column;
   }
 }
+.withJoin {
+  @media screen and (max-height: 830px) and (max-width: $mobile-view) {
+    height: calc(100vh - 430px);
+  }
+}
+.withOutJoin {
+  @media screen and (max-height: 830px) and (max-width: $mobile-view) {
+    height: calc(100vh - 400px);
+  }
+}
