@@ -68,7 +68,7 @@ function Cover() {
                 </p>
                 <div className="cover__titles__timer">
                     <p className="t">T - </p>
-                    <Countdown date={`2021-03-27T00:00:00`} />
+                    <Countdown date={`2021-03-27T12:00:00`} />
                     <p className="t">For the launch</p>
                 </div>
             </div>
