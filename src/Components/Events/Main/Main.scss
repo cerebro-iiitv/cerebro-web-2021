@@ -5,11 +5,10 @@
   margin: 0 auto;
   border: 1px solid #1bbcf1;
   padding: 25px 20px;
-  border-radius: 20px ;
+  border-radius: 20px;
   overflow-x: hidden;
   margin-bottom: 30px;
   padding-left: 40px;
-
 
   &__container {
     height: max-content;
@@ -29,7 +28,7 @@
       color: #ffffff;
       padding-bottom: 20px;
 
-      @media screen and (max-width:1200px){
+      @media screen and (max-width: 1200px) {
         font-size: 40px;
       }
 
@@ -55,7 +54,6 @@
 
       // Height Media Query
       @media screen and (max-height: 830px) and (max-width: $mobile-view) {
-        height: calc(100vh - 400px);
         overflow-y: scroll;
       }
 
@@ -81,7 +79,6 @@
         @media screen and (max-width: $mobile-view) {
           width: 100%;
         }
-        
 
         @media screen and (max-height: 600px) {
           margin: auto;
@@ -111,7 +108,7 @@
             font-size: 14px;
             height: max-content;
             text-align: center;
-            margin:  auto;
+            margin: auto;
           }
 
           @media screen and (max-height: 600px) {
@@ -158,7 +155,7 @@
         padding: 20px;
         padding-top: 0;
 
-        @media screen and (max-width:1200px) {
+        @media screen and (max-width: 1200px) {
           padding: 10px;
         }
 
@@ -187,7 +184,7 @@
           padding-top: 40px;
           cursor: pointer;
           font-size: 18px;
-          @media screen and (max-width:$mobile-view) {
+          @media screen and (max-width: $mobile-view) {
             padding-top: 20px;
           }
           a {
@@ -244,7 +241,7 @@
       }
     }
 
-    &__input{
+    &__input {
       font-family: "Gilroy-Light", Arial, Helvetica, sans-serif;
       letter-spacing: 1px;
       font-size: 16px;
@@ -266,7 +263,7 @@
       }
     }
 
-    &__join{
+    &__join {
       font-family: "Gilroy-Light", Arial, Helvetica, sans-serif;
       letter-spacing: 2px;
       font-size: 16px;
@@ -288,7 +285,7 @@
       }
     }
 
-    &__button:hover{
+    &__button:hover {
       background-color: #03b0ef;
       // color: black;
     }
@@ -299,11 +296,12 @@
   font-size: 18px;
   border: 0px;
 
-  @media screen and (max-width:1000px) {
+  @media screen and (max-width: 1000px) {
     width: 100%;
   }
 
-  &__key, &__value {
+  &__key,
+  &__value {
     box-sizing: border-box;
     padding-bottom: 15px;
   }
@@ -314,7 +312,7 @@
     color: $color-style;
     text-align: left;
     font-weight: 800;
-    @media screen and (max-width:1200px){
+    @media screen and (max-width: 1200px) {
       font-size: 16px;
     }
 
@@ -329,7 +327,7 @@
     padding-left: 10px;
     line-height: 1.4;
 
-    @media screen and (max-width:1200px){
+    @media screen and (max-width: 1200px) {
       font-size: 16px;
     }
     @media screen and (max-width: $mobile-view) {
@@ -341,12 +339,12 @@
     }
   }
 }
-.confirmationMsg{
+.confirmationMsg {
   margin-top: 15px;
   text-align: center;
 }
 
-.registerBtnContainer{
+.registerBtnContainer {
   display: flex;
   @media screen and (max-width: $mobile-view) {
     flex-flow: column;

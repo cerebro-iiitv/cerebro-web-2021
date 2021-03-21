@@ -44,14 +44,7 @@
   &__logo {
     display: flex;
     flex-flow: row;
-    justify-content: space-between;
-    border-top: 2px solid grey;
-    width: 100%;
-    height: fit-content;
-    margin: 0 auto;
-    padding-top: 56px;
-    padding-bottom: 32px;
-    overflow: hidden;
+    justify-content: left;
 
     @media (max-width: 823px) {
       justify-content: center;
@@ -347,5 +340,9 @@ b {
       height: 20px;
       display: inline-block;
     }
+  }
+
+  @media screen and (max-width: $mobile-view) {
+    font-size: 12px;
   }
 }
