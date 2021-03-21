@@ -11,11 +11,11 @@ const Details = ()=>{
             <div className="details__body">
                 <div className="details__body__figures">
                     <div>
-                        <span>1,10,000 INR +</span>
+                        <span>1,20,000 INR +</span>
                     </div>
 
                     <div>
-                        <span>15+</span>
+                        <span>18+</span>
                     </div>
 
                     <div>
