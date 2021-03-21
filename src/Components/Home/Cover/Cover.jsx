@@ -63,12 +63,12 @@ function Cover() {
                 <h1 className="cover__titles__title">Cerebro</h1>
                 <p className="cover__titles__date">
                     <span>
-                        28<sup>th</sup> March 2021 - 4<sup>th</sup> April 2021
+                        27<sup>th</sup> March 2021 - 4<sup>th</sup> April 2021
                     </span>
                 </p>
                 <div className="cover__titles__timer">
                     <p className="t">T - </p>
-                    <Countdown date={`2021-03-28T00:00:00`} />
+                    <Countdown date={`2021-03-27T00:00:00`} />
                     <p className="t">For the launch</p>
                 </div>
             </div>
