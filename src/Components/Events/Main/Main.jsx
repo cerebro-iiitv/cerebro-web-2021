@@ -220,6 +220,13 @@ class Main extends Component {
                   <td className="events-info-table__value">
                     {event.start_time} to {event.end_time}
                   </td>
+                </tr>             
+                <tr>
+                  <td className="events-info-table__key">
+                    <a  href={event.social_media}
+                        style={{ color: "#54cbff" }}
+                        target="_blank">Social Media</a>
+                  </td>
                 </tr>
               </table>
             </div>
