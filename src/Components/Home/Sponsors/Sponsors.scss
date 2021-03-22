@@ -54,9 +54,24 @@
   height: 222px;
 }
 
+.sponsors__title-sponsors__logo-2{
+  width: 222px;
+  height: 222px;
+}
+
+.sponsors__title-sponsors__body{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  column-gap: 155px;
+  row-gap:89px;
+}
+
 .sponsors__title-sponsors{
   .sponsors__heading{
     margin-bottom: 58px;
+    text-align: center;
   }
 
   .sponsors__ellipse__yellow{
@@ -194,6 +209,14 @@
   .sponsors__title-sponsors__logo{
     width: 136px;
     height: 162px;
+  }
+  .sponsors__title-sponsors__logo-2{
+    width: 162px;
+    height: 162px;
+  }
+
+  .sponsors__title-sponsors__body{
+    flex-direction: column;
   }
 
   .sponsors__others{

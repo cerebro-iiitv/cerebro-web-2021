@@ -9,14 +9,26 @@ const Sponsors=()=>{
         <div className="sponsors__heading">
           <span>TITLE SPONSOR</span>
         </div>
-        <div className="sponsors__body">
-          <div className="sponsors__ellipse__yellow"></div>
-          <div className="sponsors__content">
-            <img className="sponsors__title-sponsors__logo" src="media/HAPRAMP@3x.png" alt="Hapramp logo"/>
+        <div className="sponsors__title-sponsors__body">
+          <div className="sponsors__body">
+            <div className="sponsors__ellipse__yellow"></div>
+            <div className="sponsors__content">
+              <img className="sponsors__title-sponsors__logo" src="media/HAPRAMP@3x.png" alt="Hapramp logo"/>
+            </div>
+            <div className="sponsors__roundrect__green"></div>
+            <div className="sponsors__ellipse__pink"></div>
           </div>
-          <div className="sponsors__roundrect__green"></div>
-          <div className="sponsors__ellipse__pink"></div>
+
+          <div className="sponsors__body">
+            <div className="sponsors__ellipse__yellow"></div>
+            <div className="sponsors__content">
+              <img className="sponsors__title-sponsors__logo-2" src="media/GIL Logo-min.png" alt="GIL logo"/>
+            </div>
+            <div className="sponsors__roundrect__green"></div>
+            <div className="sponsors__ellipse__pink"></div>
+          </div>
         </div>
+
       </div>
       <div className="sponsors__others">
         <div className="sponsors__associate-sponsors">
