@@ -220,7 +220,7 @@ class Main extends Component {
                   <td className="events-info-table__value">
                     {event.start_time} to {event.end_time}
                   </td>
-                </tr>
+                </tr>    
               </table>
             </div>
           </React.Fragment>
@@ -230,6 +230,20 @@ class Main extends Component {
       }
     });
 
+    const socialMedia = this.props.events.map((event,index)=>{
+      if(index===this.props.index)
+      return(
+        <a  
+            href={event.social_media}
+            style={{ color: "#54cbff" }}
+            target="_blank"
+        >
+          Social Media
+        </a>
+      )
+      else return null;
+    });
+    
     return (
       <div className="main">
         <div className="main__container">
@@ -296,14 +310,19 @@ class Main extends Component {
                   </tr>
                 ) : null}
               </table>
-              <a
-                style={{ color: "#1bbcf1" }}
-                target="_blank"
-                rel="noopener noreferrer"
-                href={this.props.pdf}
+              <div
+                style={{display: "flex", flexDirection: "column", rowGap: "10px"}}
               >
-                Rules and Regulations
-              </a>
+                <a
+                  style={{ color: "#1bbcf1" }}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={this.props.pdf}
+                >
+                  Rules and Regulations
+                </a>
+                {socialMedia}
+              </div>
             </div>
           </div>
         </div>
