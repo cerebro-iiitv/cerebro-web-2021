@@ -64,7 +64,17 @@ const Faqs = ()=>{
                                 We have not set any cap on the number of events you can participate in, and win too!
                             </p>
                         </div>
-                    </div>               
+                    </div>     
+                    <div>
+                        <div className="faqs__question">
+                            <span>Do we have a Campus Ambassador Program this year?</span>
+                        </div>
+                        <div className="faqs__answer">
+                            <p>Unfortunately we do not have a campus ambassador program this year, 
+                                but we will surely be having one next time!
+                            </p>
+                        </div>
+                    </div>             
                 </div>
             </div>
             <Footer />
