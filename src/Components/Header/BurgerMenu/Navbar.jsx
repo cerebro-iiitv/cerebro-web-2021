@@ -160,7 +160,7 @@ class Navbar extends Component {
             <a
               className="list_element"
               onClick={this.hideDrawer}
-              href="https://yashshah2820.pythonanywhere.com/media/pdfs/cerebro-brochure.pdf"
+              href="https://cerebro.pythonanywhere.com/media/docs/cerebro-brochure.pdf"
             >
               <i className="fa fa-info"></i>
               <span className="elements">BROCHURE</span>
