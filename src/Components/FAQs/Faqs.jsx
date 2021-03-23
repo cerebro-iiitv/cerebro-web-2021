@@ -18,7 +18,7 @@ const Faqs = ()=>{
                         </div>
                         <div className="faqs__answer">
                             <p>Anyone currently pursuing an undergraduate degree from any institution in india, 
-                                across all streams is eligible to participate in Cerebro 2021
+                                across all streams is eligible to participate in Cerebro 2021. Alumnus of IIITV and graduated students of any institute are not permitted to participate.
                             </p>
                         </div>
                     </div>
