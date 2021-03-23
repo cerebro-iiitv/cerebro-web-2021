@@ -54,7 +54,16 @@ const Faqs = ()=>{
                                 confirming that you are a student of the institution.
                             </p>
                         </div>
-                    </div>             
+                    </div>  
+                    <div>
+                        <div className="faqs__question">
+                            <span>Why do I need to join the discord server?</span>
+                        </div>
+                        <div className="faqs__answer">
+                            <p>All communication like match fixtures, submission forms and more will be communicated through discord server only and there are dedicated channels for queries between participants and organizers
+                            </p>
+                        </div>
+                    </div>
                     <div>
                         <div className="faqs__question">
                             <span>How many events can I participate in?</span>
