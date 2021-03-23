@@ -234,6 +234,7 @@ class Main extends Component {
       <div className="main">
         <div className="main__container">
           <h1 className="main__container__title">{this.props.title}</h1>
+          <a href="https://discord.com/invite/YUEeUcBtbU" style={{width:'100%', textAlign:'center'}}>Join Discord Server</a>
           <div
             className="main__container__content"
             style={{
