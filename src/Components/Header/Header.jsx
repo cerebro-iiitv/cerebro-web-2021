@@ -97,13 +97,9 @@ class Header extends Component {
             <NavLink className="navbar__links__li" exact to="/timeline">
               <li>timeline</li>
             </NavLink>
-            <a
-              className="navbar__links__li"
-              href="https://cerebro.pythonanywhere.com/media/docs/cerebro-brochure.pdf"
-            >
-              {" "}
-              Brochure{" "}
-            </a>
+            <NavLink className="navbar__links__li" exact to="/faqs">
+              <li>FAQs</li>
+            </NavLink>
           </ul>
           {this.state.user_id ? (
             <div>

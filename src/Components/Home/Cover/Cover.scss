@@ -20,7 +20,16 @@
       letter-spacing: normal;
       text-align: left;
     }
-
+    &__discord{
+      padding-top: 20px;
+      padding-left: 38px;
+      font-size: 20px;
+      
+      &__link{
+        color: #29abe2;
+      }
+      
+    }
     &__date {
       font-family: "Gilroy-Light", "Arial";
       font-size: 37px;
@@ -69,6 +78,7 @@
       &__timer {
         font-size: 18px;
         margin-top: 75px;
+        margin-left: 38px;
       }
     }
   }

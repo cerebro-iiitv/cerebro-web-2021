@@ -157,14 +157,14 @@ class Navbar extends Component {
               <span className="elements">TIMELINE</span>
             </NavLink>
 
-            <a
+            <NavLink
               className="list_element"
               onClick={this.hideDrawer}
-              href="https://cerebro.pythonanywhere.com/media/docs/cerebro-brochure.pdf"
+              to="/faqs"
             >
-              <i className="fa fa-info"></i>
-              <span className="elements">BROCHURE</span>
-            </a>
+              <i className="fa fa-hourglass-half"></i>
+              <span className="elements">FAQs</span>
+            </NavLink>
             {this.state.user_id ? (
               <React.Fragment>
                 <NavLink

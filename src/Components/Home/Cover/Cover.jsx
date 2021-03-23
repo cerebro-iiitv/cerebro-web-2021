@@ -71,6 +71,9 @@ function Cover() {
                     <Countdown date={`2021-03-27T12:00:00`} />
                     <p className="t">For the launch</p>
                 </div>
+                <p className="t cover__titles__discord">
+                        Join the <a className="cover__titles__discord__link" href="https://discord.gg/YUEeUcBtbU" target="_blank">discord server</a> for further communication!
+                </p>
             </div>
             <div className="cover__image">
                 <img
