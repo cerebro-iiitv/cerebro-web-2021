@@ -201,7 +201,8 @@ class Main extends Component {
         return (
           <React.Fragment key={index}>
             <div className="main__container__content__left__description">
-              <p>{event.description} <br/>
+              <p>{event.description} <br/><br/>
+                For further communication, join our 
                 <a  
                     href="https://discord.gg/YUEeUcBtbU"
                     style={{ color: "#54cbff" }}
