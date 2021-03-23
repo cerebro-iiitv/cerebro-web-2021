@@ -72,7 +72,7 @@ function Cover() {
                     <p className="t">For the launch</p>
                 </div>
                 <p className="t cover__titles__discord">
-                        Join the <a className="cover__titles__link" href="https://discord.gg/YUEeUcBtbU">discord server</a> for further communication!
+                        Join the <a className="cover__titles__discord__link" href="https://discord.gg/YUEeUcBtbU">discord server</a> for further communication!
                 </p>
             </div>
             <div className="cover__image">
