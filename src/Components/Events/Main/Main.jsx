@@ -202,7 +202,7 @@ class Main extends Component {
           <React.Fragment key={index}>
             <div className="main__container__content__left__description">
               <p>{event.description} <br/><br/>
-                For further communication, join our &nbsp;
+                For further communication, join our&nbsp;
                 <a  
                     href="https://discord.gg/YUEeUcBtbU"
                     style={{ color: "#54cbff" }}
