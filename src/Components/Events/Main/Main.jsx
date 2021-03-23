@@ -3,6 +3,7 @@ import "./Main.scss";
 import axios from "axios";
 import { GoogleLogin } from "react-google-login";
 import Cookies from "js-cookie";
+var parse = require('html-react-parser');
 
 class Main extends Component {
   state = {
@@ -201,7 +202,7 @@ class Main extends Component {
         return (
           <React.Fragment key={index}>
             <div className="main__container__content__left__description">
-              <p>{event.description} <br/><br/>
+              <p>parse({event.description}) <br/><br/>
                 For further communication, join our&nbsp;
                 <a  
                     href="https://discord.gg/YUEeUcBtbU"
