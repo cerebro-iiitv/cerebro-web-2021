@@ -27,7 +27,13 @@ function Footer() {
 						<div className="footer_l__links_content"><a href='http://iiitvadodara.ac.in/' target="_blank" className="footer_l__links_cn" >Institute Site</a></div>
 						<div className="footer_l__links_content"><NavLink className="footer_l__links_cn" exact to="/events">Events</NavLink></div>
 						<div className="footer_l__links_content"><NavLink className="footer_l__links_cn" exact to="/timeline">Timeline</NavLink></div>
-						<div className="footer_l__links_content"><NavLink className="footer_l__links_cn" exact to="/faqs">FAQs</NavLink></div>
+						 <a
+              className="footer_l__links_content"
+              href="https://cerebro.pythonanywhere.com/media/docs/cerebro-brochure.pdf"
+            >
+              {" "}
+              Brochure{" "}
+            </a>
 					</div>
 					<div className="footer_l__contact">
 						<div>
