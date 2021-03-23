@@ -201,15 +201,17 @@ class Main extends Component {
         return (
           <React.Fragment key={index}>
             <div className="main__container__content__left__description">
-              <p>{event.description}</p>
+              <p>{event.description} 
+                <a  
+                    href="https://discord.gg/YUEeUcBtbU"
+                    style={{ color: "#54cbff" }}
+                    target="_blank"
+                >
+                  Discord Server
+                </a>
+              </p>
             </div>
-            <a  
-                href="https://discord.gg/YUEeUcBtbU"
-                style={{ color: "#54cbff" }}
-                target="_blank"
-            >
-              Discord Server
-            </a>
+            
           
             <div className="event-info-table-container">
               <table className="events-info-table">
