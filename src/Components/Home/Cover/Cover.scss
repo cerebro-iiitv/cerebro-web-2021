@@ -20,7 +20,14 @@
       letter-spacing: normal;
       text-align: left;
     }
-
+    &__discord{
+      padding: 20px;
+      
+      &__link{
+        color: #29abe2;
+      }
+      
+    }
     &__date {
       font-family: "Gilroy-Light", "Arial";
       font-size: 37px;
