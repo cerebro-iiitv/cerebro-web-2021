@@ -72,7 +72,7 @@ function Cover() {
                     <p className="t">For the launch</p>
                 </div>
                 <br>
-                <p className="t1">
+                <p className="t">
                         Join the <a href="https://discord.gg/YUEeUcBtbU">discord server</a> for further communication!
                 </p>
             </div>
