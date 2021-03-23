@@ -73,7 +73,7 @@ function Cover() {
                 </div>
                 <p className="cover__titles__date">
                     <span>
-                        Join the <a href="https://discord.gg/YUEeUcBtbU">discord server<a> for further communication!
+                        Join the <a href="https://discord.gg/YUEeUcBtbU">discord server</a> for further communication!
                     </span>
                 </p>
             </div>
