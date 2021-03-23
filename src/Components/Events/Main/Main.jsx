@@ -203,6 +203,14 @@ class Main extends Component {
             <div className="main__container__content__left__description">
               <p>{event.description}</p>
             </div>
+            <a  
+                href="https://discord.gg/YUEeUcBtbU"
+                style={{ color: "#54cbff" }}
+                target="_blank"
+            >
+              Discord Server
+            </a>
+          
             <div className="event-info-table-container">
               <table className="events-info-table">
                 <tr>
