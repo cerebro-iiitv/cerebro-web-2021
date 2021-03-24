@@ -204,7 +204,7 @@ class Main extends Component {
               <p>{event.description} <br/><br/>
                 For further communication, join our&nbsp;
                 <a  
-                    href="https://discord.gg/YUEeUcBtbU"
+                    href="https://discord.gg/pB7Dfa9DxM"
                     style={{ color: "#54cbff" }}
                     target="_blank"
                 >
