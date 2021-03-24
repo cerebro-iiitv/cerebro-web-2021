@@ -15,7 +15,7 @@ function Cover() {
                 <div className="cover__social-links__container">
                     <a
                         className="cover__social-links__link"
-                        href="https://discord.gg/pB7Dfa9DxM"
+                        href="https://discord.gg/3HSvgXJFFe"
                         target="_blank"
                     >
                         <img
@@ -72,7 +72,7 @@ function Cover() {
                     <p className="t">For the launch</p>
                 </div>
                 <p className="t cover__titles__discord">
-                        Join the <a className="cover__titles__discord__link" href="https://discord.gg/YUEeUcBtbU" target="_blank">discord server</a> for further communication!
+                        Join the <a className="cover__titles__discord__link" href="https://discord.gg/3HSvgXJFFe" target="_blank">discord server</a> for further communication!
                 </p>
             </div>
             <div className="cover__image">

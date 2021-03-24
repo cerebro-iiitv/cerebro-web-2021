@@ -2,6 +2,17 @@ export const teamdata = {
     Core: [
         {
             id: 20,
+            name: "Prof. Naveen Kumar",
+            team: "pic",
+            role: "Person In Charge",
+            img:
+                "https://cerebro.pythonanywhere.com/media/team-profilepics/naveen_sir.jpg",
+            links: {
+                link: "http://iiitvadodara.ac.in/faculty/nkc001.php",
+            },
+        },
+        {
+            id: 20,
             name: "Tanmay Ambadkar",
             team: "core",
             role: "President",
