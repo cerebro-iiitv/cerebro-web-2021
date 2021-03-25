@@ -135,6 +135,22 @@ const Faqs = () => {
                             </p>
                         </div>
                     </div>
+
+                    <div>
+                        <div className="faqs__question">
+                            <span>
+                                What's the registration process?
+                            </span>
+                        </div>
+                        <div className="faqs__answer">
+                            <iframe
+                                    src="https://www.youtube.com/embed/XBtPi4m5pOY" 
+                                    title="YouTube video player" 
+                                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+                            >
+                            </iframe>
+                        </div>
+                    </div>
                 </div>
             </div>
             <Footer />
