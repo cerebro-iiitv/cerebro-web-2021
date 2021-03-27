@@ -22,8 +22,9 @@
     }
     &__discord{
       padding-top: 20px;
-      padding-left: 38px;
       font-size: 20px;
+      width: fit-content;
+      text-align: center;
       
       &__link{
         color: #29abe2;
