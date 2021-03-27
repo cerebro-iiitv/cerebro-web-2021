@@ -262,19 +262,46 @@ class Main extends Component {
             }
         });
 
-        const socialMedia = this.props.events.map((event, index) => {
-            if (index === this.props.index)
-                return (
-                    <a
-                        href={event.social_media}
-                        style={{ color: "#54cbff" }}
-                        target="_blank"
-                    >
-                        Social Media
-                    </a>
-                );
-            else return null;
-        });
+        const socialMedia = this.props.events.map(
+            (event, index) => {
+                if (index === this.props.index)
+                    return (
+                        <a
+                            href={event.social_media}
+                            style={{ color: "#54cbff" }}
+                            target="_blank"
+                        >
+                            Social Media
+                        </a>
+                    );
+                else return null;
+            }
+        );
+
+        const isRegistrationOn = this.props.events.map(
+            (event,index)=>{
+                if(index === this.props.index && event.start_time!==undefined){
+                    let currentDate = new Date();
+                    let startTime = event.start_time.slice(17,18)==="P"? 
+                                                                (Number(event.start_time.slice(11,13))+12)
+                                                                :
+                                                                (Number(event.start_time.slice(11,13)));
+                                                            
+                    // if(startTime===24) startTime=0;
+                    let startDate = new Date(Number(event.start_time.slice(6,10)),
+                                             Number(event.start_time.slice(3,5)-1),
+                                             Number(event.start_time.slice(0,2)),
+                                             startTime,
+                                             Number(event.start_time.slice(14,16))
+                                            );
+                    console.log(startDate);
+                    let diff = Date.parse(startDate) - Date.parse(currentDate);
+                    if(diff<=21600 || diff<0) return false;
+                    else return true;
+                }
+                else return undefined;
+            }
+        ).filter(status => status !== undefined)[0];
 
         return (
             <div className="main">
@@ -378,7 +405,12 @@ class Main extends Component {
                         </div>
                     </div>
                 </div>
-                {this.state.auth ? registerButton : LoginBtn}
+                {isRegistrationOn?(this.state.auth ? registerButton : LoginBtn)
+                                 :
+                                <p style={{textAlign:"center", padding:"6px", fontSize:"18px"}}>
+                                    Registration Closed
+                                </p>
+                }
                 {/* {registerButton} */}
                 <p className="confirmationMsg">{this.props.teamCode}</p>
             </div>
