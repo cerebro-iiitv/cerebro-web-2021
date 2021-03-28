@@ -276,6 +276,8 @@ class Main extends Component {
             else return null;
         });
 
+        const isRegistrationClosed = this.props.events[this.props.index].is_closed;
+
         return (
             <div className="main">
                 <div className="main__container">
@@ -378,7 +380,12 @@ class Main extends Component {
                         </div>
                     </div>
                 </div>
-                {this.state.auth ? registerButton : LoginBtn}
+                {isRegistrationClosed?
+                                    <p style={{textAlign:"center", padding:"6px", fontSize:"18px"}}>
+                                        Registration Closed
+                                    </p>
+                                    :
+                                    (this.state.auth ? registerButton : LoginBtn)}
                 {/* {registerButton} */}
                 <p className="confirmationMsg">{this.props.teamCode}</p>
             </div>
