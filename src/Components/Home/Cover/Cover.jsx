@@ -66,11 +66,11 @@ function Cover() {
                         27<sup>th</sup> March 2021 - 4<sup>th</sup> April 2021
                     </span>
                 </p>
-                {/* <div className="cover__titles__timer">
+                {<div className="cover__titles__timer">
                     <p className="t">T - </p>
                     <Countdown date={`2021-03-27T12:00:00`} />
                     <p className="t">For the launch</p>
-                </div> */}
+                </div>}
                 <p className="t cover__titles__discord">
                         Join the <a className="cover__titles__discord__link" href="https://discord.gg/3HSvgXJFFe" target="_blank">discord server</a> for further communication!
                 </p>
