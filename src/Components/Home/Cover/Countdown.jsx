@@ -114,18 +114,18 @@ class Countdown extends Component {
   }
 
   calculateSec() {
-    return this.calculateCountdown(this.props.date).sec;
+    return 0;
   }
 
   calculateMin() {
-    return this.calculateCountdown(this.props.date).min;
+    return 0;
   }
 
   calculateHour() {
-    return this.calculateCountdown(this.props.date).hours;
+    return 0;
   }
   calculateDay() {
-    return this.calculateCountdown(this.props.date).days;
+    return 0;
   }
 
   stop() {
