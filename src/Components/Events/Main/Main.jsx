@@ -276,7 +276,8 @@ class Main extends Component {
             else return null;
         });
 
-        const isRegistrationClosed = this.props.events[this.props.index].is_closed;
+        const isRegistrationClosed = this.props.events[this.props.index]
+            .is_closed;
 
         return (
             <div className="main">
@@ -303,13 +304,16 @@ class Main extends Component {
                                     </td>
                                     <td className="events-info-table__value">
                                         {this.props.contacts[0].name}
-                                        <p className="events-info-table__value__call">
-                                            <i className="fa fa-phone"></i>{" "}
-                                            {
-                                                this.props.contacts[0]
-                                                    .phone_number
-                                            }
-                                        </p>
+                                        {this.props.contacts[0]
+                                            ?.phone_number && (
+                                            <p className="events-info-table__value__call">
+                                                <i className="fa fa-phone"></i>{" "}
+                                                {
+                                                    this.props.contacts[0]
+                                                        .phone_number
+                                                }
+                                            </p>
+                                        )}
                                     </td>
                                 </tr>
                                 <tr>
@@ -380,12 +384,21 @@ class Main extends Component {
                         </div>
                     </div>
                 </div>
-                {isRegistrationClosed?
-                                    <p style={{textAlign:"center", padding:"6px", fontSize:"18px"}}>
-                                        Registration Closed
-                                    </p>
-                                    :
-                                    (this.state.auth ? registerButton : LoginBtn)}
+                {isRegistrationClosed ? (
+                    <p
+                        style={{
+                            textAlign: "center",
+                            padding: "6px",
+                            fontSize: "18px",
+                        }}
+                    >
+                        Registration Closed
+                    </p>
+                ) : this.state.auth ? (
+                    registerButton
+                ) : (
+                    LoginBtn
+                )}
                 {/* {registerButton} */}
                 <p className="confirmationMsg">{this.props.teamCode}</p>
             </div>
