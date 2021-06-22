@@ -176,6 +176,18 @@ export const teamdata = {
                 twitter: "https://www.twitter.com/PrathmeshKhand7",
             },
         },
+        {
+            "id": 31,
+            "name": "Shivansh Kumar",
+            "team": "web",
+            "role": "Member",
+            "profilepic": "https://cerebro.pythonanywhere.com/media/team-profilepics/ae8218b8-d908-4bf5-bcac-1f54c19aac84.jfif",
+            "portfolio": "",
+            "github": "https://github.com/ShivanshKumar",
+            "linked_in": "http://www.linkedin.com/in/shivansh-kumar-248a751a0",
+            "twitter": "",
+            "dribbble": ""
+        },
     ],
 
     Design: [
