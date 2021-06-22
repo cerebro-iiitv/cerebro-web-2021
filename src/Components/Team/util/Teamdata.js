@@ -184,8 +184,7 @@ export const teamdata = {
             img: "https://cerebro.pythonanywhere.com/media/team-profilepics/ae8218b8-d908-4bf5-bcac-1f54c19aac84.jfif",
             links: {
                 github: "https://github.com/ShivanshKumar",
-                linkedin:
-                    "http://www.linkedin.com/in/shivansh-kumar-248a751a0",
+                linkedin: "http://www.linkedin.com/in/shivansh-kumar-248a751a0",
             },
         },
     ],
